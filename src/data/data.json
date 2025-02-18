@@ -1,0 +1,150 @@
+{
+    "libros": [
+        {
+            "isbn": "9781838665012",
+            "titulo": "Las personas y el planeta",
+            "autor": "Maisie Skidmore",
+            "portada": "",
+            "resumen": "Desde los años 50, IKEA ha entrado en casas de todo el mundo para estudiar cómo se vive. A partir de esta idea, inter IKEA Systems y Phaidon se han unido para investigar uno de los grandes retos de nuestro tiempo: cómo vivir más sosteniblemente. A través de las experiencias de artistas, deportistas, activistas, empresarios y otros profesionales —desde México a Moscú y desde Bali a Beirut—, este libro va desentrañando las claves para que la vida de cada uno de nosotros tenga un impacto más positivo en el planeta. Se trata de un libro dividido en seis capítulos: Tiempo, Espacio, Comida, Descanso, Juego y Unión. Incluye un prólogo de Peter, Mathias y Jonas Kamprad, hijos del fundador de IKEA, Ingvar Kamprad.",
+            "paginas": 256,
+            "precio": 35800,
+            "stock": 10,
+            "genero": "Diseño",
+            "editorial": "Phaidon",
+            "idioma": "Español",
+            "encuadernacion": "Tapa dura",
+            "publicacion": 2022,
+            "descuento": 0,
+            "dimensiones": "19 x 24 cm",
+            "calificacion": 0,
+            "novedad": true
+        },
+        {
+            "isbn": "9781838661434",
+            "titulo": "The Design Book",
+            "autor": "VV.AA",
+            "portada": "",
+            "resumen": "Esta publicación, revisada y ampliada, invita a descubrir 500 de los productos más innovadores, influyentes y duraderos de los últimos cinco siglos, cada uno presentado a partir de un texto descriptivo, imágenes e información sobre su creador. The Design Book incorpora piezas icónicas de maestros como Le Corbusier, Philippe Starck y los Eames, junto con clásicos como el clip, la linterna de huracán y la copa de Martini. Esta nueva edición, además, incluye 30 nuevos objetos creados durante los últimos 15 años, una selección que refleja los avances del diseño moderno.",
+            "paginas": 544,
+            "precio": 33800,
+            "stock": 15,
+            "genero": "Diseño",
+            "editorial": "Phaidon",
+            "idioma": "Inglés",
+            "encuadernacion": "Tapa dura",
+            "publicacion": 2020,
+            "descuento": 0,
+            "dimensiones": "12.3 x 16.3 cm",
+            "calificacion": 0,
+            "novedad": true
+        },
+        {
+            "isbn": "9788433927545",
+            "titulo": "Clara y confusa",
+            "autor": "Cynthia Rimsky",
+            "portada": "",
+            "resumen": "Liviana y profunda, esquiva y sólida, hilarante y seria, esta novela singularísima, que despliega un escurridizo y delicioso sentido del humor, nos lanza algunas preguntas trascendentales: ¿qué es el arte? ¿Cuál es su misión? ¿Cómo podemos darle sentido a la vida? ¿Qué es el amor? ¿Lo que nos sucede es fruto del destino o de la casualidad? ¿Hay una lógica en el azar? La autora, fascinante rara avis literaria, nos plantea un juego nada inocente que se pone en marcha desde el paradójico título.",
+            "paginas": 168,
+            "precio": 22000,
+            "stock": 20,
+            "genero": "Ficción",
+            "editorial": "Anagrama",
+            "idioma": "Español",
+            "encuadernacion": "Tapa blanda",
+            "publicacion": 2024,
+            "descuento": 10,
+            "dimensiones": "14 x 22 cm",
+            "calificacion": 0,
+            "novedad": false
+        },
+        {
+            "isbn": "9788425234347",
+            "titulo": "Crear fotografías",
+            "autor": "Albert Watson",
+            "portada": "",
+            "resumen": "A lo largo de su exitosa carrera profesional, el fotógrafo escocés Albert Watson ha creado algunas de las fotografías más famosas e icónicas de nuestros tiempos. Su gama de trabajos ha sido ilimitada, ya que se mueve sin problemas entre retratos íntimos, sesiones de alta costura, paisajes espectaculares y reflexivos bodegones. No por nada su increíble obra forma parte de las colecciones permanentes de la National Portrait Gallery de Londres y del Metropolitan Museum of Art de Nueva York. Este libro nos sumerge en la práctica de este legendario fotógrafo a través de 20 brillantes y accesibles lecciones. Al recorrer estas páginas encontraremos un sinfín de consejos, recursos y curiosidades con una alta carga inspiracional, claves de valor incalculable que nos permitirán nutrir nuestra propia experiencia con la cámara y aprender a captar imágenes genuinas.",
+            "paginas": 128,
+            "precio": 22800,
+            "stock": 18,
+            "genero": "Fotografía",
+            "editorial": "Gustavo Gili",
+            "idioma": "Español",
+            "encuadernacion": "Tapa blanda",
+            "publicacion": 2023,
+            "descuento": 15,
+            "dimensiones": "14.4 x 20 cm",
+            "calificacion": 0,
+            "novedad": false
+        }
+    ],
+    "generos": [
+        {
+            "id": 1,
+            "nombre": "Arquitectura"
+        },
+        {
+            "id": 2,
+            "nombre": "Arte"
+        },
+        {
+            "id": 3,
+            "nombre": "Aventura"
+        },
+        {
+            "id": 4,
+            "nombre": "Biografía"
+        },
+        {
+            "id": 5,
+            "nombre": "Ciencia Ficción"
+        },
+        {
+            "id": 6,
+            "nombre": "Diseño"
+        },
+        {
+            "id": 7,
+            "nombre": "Ensayo"
+        },
+        {
+            "id": 8,
+            "nombre": "Fantasía"
+        },
+        {
+            "id": 9,
+            "nombre": "Ficción"
+        },
+        {
+            "id": 10,
+            "nombre": "Fotografía"
+        },
+        {
+            "id": 11,
+            "nombre": "Histórico"
+        },
+        {
+            "id": 12,
+            "nombre": "Misterio"
+        },
+        {
+            "id": 13,
+            "nombre": "No Ficción"
+        },
+        {
+            "id": 14,
+            "nombre": "Poesía"
+        },
+        {
+            "id": 15,
+            "nombre": "Romántico"
+        },
+        {
+            "id": 16,
+            "nombre": "Terror"
+        },
+        {
+            "id": 17,
+            "nombre": "Teatro"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #222222 !important;
+}
+
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 75%;
+        /* 1rem = 12px en pantallas más grandes */
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 100%;
+        /* 1rem = 16px en pantallas grandes */
+    }
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Funnel Display';
+    margin: 0;
+    padding: 0;
+    background-color: #222222 !important
+}

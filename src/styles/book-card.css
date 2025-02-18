@@ -1,0 +1,87 @@
+.card-container {
+    width: 15.375rem;
+    height: 28.51rem;
+    flex-shrink: 0;
+    border-radius: 0rem;
+    border: none;
+    padding: 0rem;
+    margin: 0.4rem 0.4rem 0.4rem 0.4rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-img-container {
+    background-color: #858585;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+.card-img-container,
+.card-img-container .img {
+    width: 15.375rem;
+    height: 22rem;
+    overflow: hidden;
+}
+
+.card-info-container .titulo {
+    color: #222;
+    font-family: "Roboto Mono";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0.75rem 0rem 0.3rem 0rem;
+}
+
+.card-info-container .autor {
+    color: #474747;
+    font-family: "Roboto Mono";
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0.3rem 0rem 0.3rem 0rem;
+}
+
+.card-container .precio {
+    color: #222;
+    font-family: "Roboto Mono";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0.3rem 0rem 0.3rem 0rem;
+}
+
+.add-cart-button {
+    width: 100%;
+    padding: 8px 12px 8px 12px;
+    border-radius: 0px;
+    background-color: #D9D9D9;
+    border: 2px solid #222;
+    color: #222;
+    font-family: "Roboto Mono";
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    box-shadow: none;
+    position: absolute;
+    bottom: -3rem;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-container:hover .add-cart-button {
+    display: block;
+    bottom: 0rem;
+}
+
+.add-cart-button:active {
+    background-color: #222 !important;
+    color: #D9D9D9 !important;
+    border: 2px solid #D9D9D9 !important;
+}
