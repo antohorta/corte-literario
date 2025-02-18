@@ -9,7 +9,7 @@ const Footer = () => {
     return (
         <>
             <Container className='footer-container'style={{borderTop: '2px solid #D9D9D9', paddingTop:'5.19rem'}}>
-                <Row>
+                <Row style={{margin: '0px', padding: '0px'}}>
                     <Col lg={3}>
                         <a href="" className='footer-link-title'>Preguntas frecuentes</a>
                         <a href="" className='footer-link'>Contacto</a>

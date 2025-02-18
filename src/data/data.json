@@ -75,6 +75,44 @@
             "dimensiones": "14.4 x 20 cm",
             "calificacion": 0,
             "novedad": false
+        },
+        {
+            "isbn": "9783836560122",
+            "titulo": "Bauhaus. Basic Art",
+            "autor": "Magdalena Droste",
+            "portada": "",
+            "resumen": "Durante un fugaz periodo de catorce años intercalado entre dos guerras mundiales, la escuela de arte y diseño alemana Bauhaus cambió el aspecto de la modernidad. Con ideales utópicos para el futuro, la escuela fue pionera en la fusión del arte, la artesanía y la tecnología aplicada a la pintura, la escultura, el diseño, la arquitectura, el cine, la fotografía, los tejidos, la cerámica, el teatro y la instalación artística. La Bauhaus fue fundada por Walter Gropius (1883-1969) como una apasionada comunidad y como un colectivo preocupado por la problemática social, y contó con Josef y Anni Albers, Wassily Kandinsky, Paul Klee, Oskar Schlemmer, Gunta St√∂lzl, Marianne Brandt y Ludwig Mies van der Rohe entre sus miembros. En sus tres ubicaciones consecutivas, Weimar, Dessau y Berlín, la escuela fue testigo de un intercambio carismático y creativo entre profesores y estudiantes de diversos estilos y preferencias artísticas, pero unidos en su idealismo e interés por una obra de arte «total» que englobara diferentes prácticas y medios. Este libro es un homenaje al atrevimiento e innovación del movimiento Bauhaus, pionero en el desarrollo del arte moderno y paradigma de la educación artística, en el que una total libertad de expresión creativa y de ideas vanguardistas dio lugar a creaciones hermosas y prácticas.",
+            "paginas": 96,
+            "precio": 22800,
+            "stock": 20,
+            "genero": "Arquitectura",
+            "editorial": "Taschen",
+            "idioma": "Español",
+            "encuadernacion": "Tapa dura",
+            "publicacion": 2006,
+            "descuento": 15,
+            "dimensiones": "21 x 26 cm",
+            "calificacion": 0,
+            "novedad": true
+        },
+        {
+            "isbn": "9789562893442",
+            "titulo": "Poemas",
+            "autor": "Raúl Zurita",
+            "portada": "",
+            "resumen": "Durante un fugaz periodo de catorce años intercalado entre dos guerras mundiales, la escuela de arte y diseño alemana Bauhaus cambió el aspecto de la modernidad. Con ideales utópicos para el futuro, la escuela fue pionera en la fusión del arte, la artesanía y la tecnología aplicada a la pintura, la escultura, el diseño, la arquitectura, el cine, la fotografía, los tejidos, la cerámica, el teatro y la instalación artística. La Bauhaus fue fundada por Walter Gropius (1883-1969) como una apasionada comunidad y como un colectivo preocupado por la problemática social, y contó con Josef y Anni Albers, Wassily Kandinsky, Paul Klee, Oskar Schlemmer, Gunta St√∂lzl, Marianne Brandt y Ludwig Mies van der Rohe entre sus miembros. En sus tres ubicaciones consecutivas, Weimar, Dessau y Berlín, la escuela fue testigo de un intercambio carismático y creativo entre profesores y estudiantes de diversos estilos y preferencias artísticas, pero unidos en su idealismo e interés por una obra de arte «total» que englobara diferentes prácticas y medios. Este libro es un homenaje al atrevimiento e innovación del movimiento Bauhaus, pionero en el desarrollo del arte moderno y paradigma de la educación artística, en el que una total libertad de expresión creativa y de ideas vanguardistas dio lugar a creaciones hermosas y prácticas.",
+            "paginas": 70,
+            "precio": 4500,
+            "stock": 30,
+            "genero": "Poesía",
+            "editorial": "FCE",
+            "idioma": "Español",
+            "encuadernacion": "Tapa blanda",
+            "publicacion": 2024,
+            "descuento": 0,
+            "dimensiones": "14 x 21 cm",
+            "calificacion": 0,
+            "novedad": true
         }
     ],
     "generos": [
@@ -136,7 +174,7 @@
         },
         {
             "id": 15,
-            "nombre": "Romántico"
+            "nombre": "Romance"
         },
         {
             "id": 16,

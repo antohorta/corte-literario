@@ -44,6 +44,10 @@
 
 /* MYSTERY BOXES HOME */
 
+.mystery-container {
+    padding: 5rem 0rem 5rem 0rem !important;
+}
+
 .mystery-container p {
     color: #D9D9D9;
     font-family: "Funnel Display";
@@ -114,12 +118,17 @@
 
 /* SUSCRIBIRSE */
 
+.suscribe-container {
+    width: 100%;
+}
+
 .suscribe-input-container {
     background-color: #D9D9D9;
     display: flex;
-    padding: 12rem 4rem 12rem 4rem !important;
     flex-direction: column;
     justify-content: center;
+    height: 100%;
+    padding: 10rem 4rem 10rem 4rem !important;
 }
 
 .suscribe-input-container h3 {
@@ -137,7 +146,7 @@
 .suscribe-input-container .form-control:focus,
 .suscribe-input-container .form-control:focus-visible {
     width: 70%;
-    border-radius: 0px;
+    border-radius: 0rem;
     background-color: #D9D9D9;
     border-bottom: 2px solid #222;
     border-left: transparent;
@@ -184,7 +193,19 @@
     border: 2px solid #D9D9D9 !important;
 }
 
-.suscribe-input-container img {
+.suscribe-img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+.suscribe-container .row {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+}
+
+.suscribe-container .col {
+    display: flex;
+    align-items: stretch;
 }

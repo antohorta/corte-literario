@@ -1,6 +1,11 @@
+import { IBook } from '../interfaces/IBook';
 import '../styles/book-card.css'
 
-const BookCard = () => {
+interface BookCardProps {
+    book: IBook;
+}
+
+const BookCard = (props: BookCardProps) => {
     return (
         <div className='card-container'>
             <div className='card-img-container'>
@@ -8,9 +13,9 @@ const BookCard = () => {
             </div>
 
             <div className='card-info-container'>
-                <p className='titulo'>Crear fotografías</p>
-                <p className='autor'>Albert Watson</p>
-                <p className='precio'>$23.990</p>
+                <p className='titulo'>{props.book.titulo}</p>
+                <p className='autor'>{props.book.autor}</p>
+                <p className='precio'>{`$${props.book.precio.toLocaleString()}`}</p>
             </div>
         </div>
     )

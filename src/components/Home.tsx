@@ -9,18 +9,19 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import BookSlide from './BookSlide';
 
+
 const Home = () => {
     return (
         <Container fluid className="home-container" style={{ margin: '0px', padding: '0px' }}>
 
             {/* ABOUT US */}
             <div className="about-container">
-                <Row className="d-flex justfify-center">
+                <Row className="d-flex justfify-center" style={{margin: '0px', padding: '0px'}}>
                     <Col md={{ span: 8, offset: 2 }} className="d-flex justfify-center">
                         <p className="about-text">Libros que se han mantenido lejos del radar principal: joyas ocultas, historias intrigantes y autores que desafían lo convencional.</p>
                     </Col>
                 </Row>
-                <Row>
+                <Row style={{margin: '0px', padding: '0px'}}> 
                     <Col className="about-link">
                         <a href="">más sobre nosotros
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,17 +35,17 @@ const Home = () => {
 
             {/* MYSTERY BOXES */}
             <div className="mystery-container">
-                <Row>
-                    <Col>
+                <Row style={{margin: '0px', padding: '0px'}}>
+                    <Col lg={7}>
                         <img src={mysteryBox} alt="" />
                     </Col>
-                    <Col>
+                    <Col lg={5}>
                         <h2>Mystery Boxes</h2>
                         <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
                             <path d="M119.542 64L74.6667 108.876L67.1242 101.333L99.1242 69.3334H10.6667V58.6667H99.1242L67.1242 26.6667L74.6667 19.1243L119.542 64Z" fill="#D9D9D9" />
                         </svg>
                     </Col>
-                    <Col className="about-link">
+                    <Col className="about-link" lg={7}>
                         <p>Accede a nuestra curaduría personalizada.</p>
                     </Col>
                 </Row>
@@ -64,8 +65,8 @@ const Home = () => {
 
             {/* SUCRÍBETE */}
             <div className="suscribe-container">
-                <Row>
-                    <Col lg={6} className='suscribe-input-container'>
+                <Row style={{margin: '0px', padding: '0px'}}>
+                    <Col lg={6} className='suscribe-input-container' style={{margin: '0rem !important', padding: '0rem'}}>
                         <h3>Únete a nuestra comunidad</h3>
                         <Form>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -77,8 +78,8 @@ const Home = () => {
                             </Button>
                         </Form>
                     </Col>
-                    <Col lg={6}>
-                        <img src={amigosLibreria} alt="" />
+                    <Col lg={6} style={{margin: '0rem !important', padding: '0rem'}}>
+                        <img src={amigosLibreria} alt="" className='suscribe-img'/>
                     </Col>
                 </Row>
             </div>
