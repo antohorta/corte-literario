@@ -7,8 +7,8 @@ import '../styles/header.css'
 const Header = () => {
     return (
         <Container fluid className='header-container'>
-            <Row style={{margin: '0px', padding: '0px'}}> 
-                <Col lg={12} sm={12} style={{padding: '0px'}}>
+            <Row style={{ margin: '0px', padding: '0px' }}>
+                <Col lg={12} sm={12} style={{ padding: '0px' }}>
                     <h1 className='home-title'>CORTE LITERARIO</h1>
                     <img src={boyAndGirlLibrary} alt="" />
                 </Col>

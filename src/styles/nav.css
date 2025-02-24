@@ -1,29 +1,46 @@
-.my-nav {
+.my-nav-container .bg-body-tertiary {
     background-color: #222 !important;
+    padding: 0rem !important;
     width: 100%;
-    height: 82px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+}
+
+.my-nav-container {
+    width: 100%;
     border-bottom: 2px solid #D9D9D9;
 }
 
-.my-nav-container .bg-body-tertiary {
+.my-nav {
     background-color: #222 !important;
-    padding: 0px !important;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+    align-items: center;
+}
+
+#nav-tilte {
+    color: #D9D9D9 !important;
+    font-family: "Funnel Display";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-left: 0rem;
 }
 
 .my-nav a,
 .my-nav button {
     color: #D9D9D9 !important;
     font-family: "Roboto Mono";
-    font-size: 14px;
+    font-size: 0.8rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-decoration: none;
-    margin-left: 48px;
+    padding: 0rem 1rem 0rem 1rem;
 }
 
 .my-nav a:hover,
@@ -37,7 +54,7 @@
 }
 
 .navbar-toggler {
-    margin-right: 0px !important;
+    margin-right: 0rem !important;
     border: none !important;
 }
 
@@ -55,15 +72,14 @@
 .my-nav-dropdown .dropdown-menu a {
     color: #D9D9D9;
     font-family: "Roboto Mono";
-    font-size: 20px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    padding-left: 24px;
 }
 
 .offcanvas-body {
-    padding-left: 80px !important;
+    padding-left: 4rem !important;
 }
 
 .offcanvas a,
@@ -71,11 +87,10 @@
 .offcanvas-body a {
     color: #D9D9D9 !important;
     font-family: "Roboto Mono";
-    font-size: 24px;
+    font-size: 1.6rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    padding: 12px 0px 12px 0px;
 }
 
 .offcanvas a:hover,

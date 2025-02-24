@@ -1,0 +1,20 @@
+.about-page-title {
+    color: #D9D9D9;
+    font-family: "Funnel Display";
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 7rem;
+}
+
+.about-page-text {
+    color: #FFFAFF;
+    font-family: "Roboto Mono";
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.about-page-img {
+    width: 100%;
+}

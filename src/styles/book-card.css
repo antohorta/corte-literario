@@ -1,6 +1,6 @@
 .card-container {
-    width: 15.375rem;
-    height: 28.51rem;
+    width: 14.83rem;
+    height: 24rem;
     flex-shrink: 0;
     border-radius: 0rem;
     border: none;
@@ -21,8 +21,8 @@
 
 .card-img-container,
 .card-img-container .img {
-    width: 15.375rem;
-    height: 22rem;
+    width: 14.83rem;
+    height: 17rem;
     overflow: hidden;
 }
 

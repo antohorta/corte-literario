@@ -21,6 +21,7 @@
 
 .about-text {
     font-size: 3rem;
+    line-height: 4rem;
 }
 
 .about-link {
@@ -28,7 +29,7 @@
 }
 
 .about-link a {
-    font-size: 1.25rem;
+    font-size: 1rem;
     text-decoration: none;
 }
 
@@ -51,7 +52,7 @@
 .mystery-container p {
     color: #D9D9D9;
     font-family: "Funnel Display";
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -60,26 +61,15 @@
 .mystery-container h2 {
     color: #D9D9D9;
     font-family: "Funnel Display";
-    font-size: 7.5rem;
+    font-size: 6rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 7.25rem;
+    line-height: 7rem;
 }
 
-/* NOVEDADES */
-
-.novelty-container {
-    background-color: #D9D9D9;
-}
-
-.novelty-container h2 {
-    color: #222;
-    font-family: "Funnel Display";
-    font-size: 7.5rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: center;
+.mystery-container img {
+    width: 100%;
+    height: auto;
 }
 
 /* ESTILO LITERARIO */
@@ -89,35 +79,58 @@
     align-items: center;
     height: 100vh;
     position: relative;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
-.image-container {
+.style-image-container {
     position: relative;
     display: inline-block;
+    text-align: center;
 }
 
-.image-container img {
-    width: 51.5rem;
-    height: 27.125rem;
-    flex-shrink: 0;
+.style-image-container img {
+    width: 100%;
+    max-width: 51.5rem;
+    height: auto;
 }
 
-.image-container h2 {
+.style-image-container h2 {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #D9D9D9;
     font-family: "Funnel Display";
-    font-size: 7.5rem;
+    font-size: 6rem;
     font-weight: 400;
+    line-height: 7rem;
     text-align: center;
     white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+    .style-image-container img {
+        max-width: 100%;
+    }
+
+    .style-image-container h2 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .style-container {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .style-image-container h2 {
+        font-size: 4rem !important;
+    }
+}
 
 /* SUSCRIBIRSE */
-
 .suscribe-container {
     width: 100%;
 }
@@ -137,7 +150,7 @@
     font-size: 3rem;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 4rem;
 }
 
 .suscribe-input-container .form-control,
@@ -145,7 +158,6 @@
 .suscribe-input-container .form-control:active,
 .suscribe-input-container .form-control:focus,
 .suscribe-input-container .form-control:focus-visible {
-    width: 70%;
     border-radius: 0rem;
     background-color: #D9D9D9;
     border-bottom: 2px solid #222;
@@ -169,8 +181,8 @@
 .suscribe-input-container .btn-primary,
 .suscribe-input-container .btn-primary:hover,
 .suscribe-input-container .btn-primary:focus-visible {
-    padding: 8px 12px 8px 12px;
-    border-radius: 0px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0rem;
     background-color: #D9D9D9;
     border: 2px solid #222;
     color: #222;
@@ -183,13 +195,13 @@
 }
 
 .suscribe-input-container .btn-primary:hover {
-    box-shadow: 5px 5px #222;
+    box-shadow: 0.3rem 0.3rem #222;
 }
 
 .suscribe-input-container .btn-primary:active {
     background-color: #222 !important;
     color: #D9D9D9 !important;
-    box-shadow: 5px 5px #222;
+    box-shadow: 0.3rem 0.3rem #222;
     border: 2px solid #D9D9D9 !important;
 }
 

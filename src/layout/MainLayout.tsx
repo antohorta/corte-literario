@@ -10,7 +10,6 @@ const MainLayout = (props: MainLayoutPorps) => {
     return (
         <>
             <Nav></Nav>
-            <Header></Header>
             <div>{props.children}</div>
             <Footer></Footer>
         </>

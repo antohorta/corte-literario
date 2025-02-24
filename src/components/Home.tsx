@@ -1,6 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col'; 
+import Col from 'react-bootstrap/Col';
 import '../styles/home.css'
 import mysteryBox from '../assets/images/mystery-box-home.jpg'
 import mujerLeyendo from '../assets/images/mujer-leyendo-sofa.gif'
@@ -8,20 +8,24 @@ import amigosLibreria from '../assets/images/amigos-en-libreria.jpg'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import BookSlide from './BookSlide';
+import Header from './Header';
 
 
 const Home = () => {
     return (
         <Container fluid className="home-container" style={{ margin: '0px', padding: '0px' }}>
 
+            {/* COVER IMG */}
+            <Header></Header>
+
             {/* ABOUT US */}
             <div className="about-container">
-                <Row className="d-flex justfify-center" style={{margin: '0px', padding: '0px'}}>
+                <Row className="d-flex justfify-center" style={{ margin: '0px', padding: '0px' }}>
                     <Col md={{ span: 8, offset: 2 }} className="d-flex justfify-center">
                         <p className="about-text">Libros que se han mantenido lejos del radar principal: joyas ocultas, historias intrigantes y autores que desafían lo convencional.</p>
                     </Col>
                 </Row>
-                <Row style={{margin: '0px', padding: '0px'}}> 
+                <Row style={{ margin: '0px', padding: '0px' }}>
                     <Col className="about-link">
                         <a href="">más sobre nosotros
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +39,7 @@ const Home = () => {
 
             {/* MYSTERY BOXES */}
             <div className="mystery-container">
-                <Row style={{margin: '0px', padding: '0px'}}>
+                <Row style={{ margin: '0px', padding: '0px' }}>
                     <Col lg={7}>
                         <img src={mysteryBox} alt="" />
                     </Col>
@@ -52,21 +56,20 @@ const Home = () => {
             </div>
 
             {/* NOVEDADES */}
-            <BookSlide/>
+            <BookSlide />
 
             {/* ESTILO LITERARIO */}
             <div className="style-container">
-                <div className="image-container">
-                    <img src={mujerLeyendo} alt="Mujer leyendo" />
+                <div className="style-image-container">
+                    <img src={mujerLeyendo} alt="Mujer leyendo" className="img-fluid"/>
                     <h2>Tu estilo literario</h2>
                 </div>
             </div>
 
-
             {/* SUCRÍBETE */}
             <div className="suscribe-container">
-                <Row style={{margin: '0px', padding: '0px'}}>
-                    <Col lg={6} className='suscribe-input-container' style={{margin: '0rem !important', padding: '0rem'}}>
+                <Row style={{ margin: '0px', padding: '0px' }}>
+                    <Col lg={6} className='suscribe-input-container' style={{ margin: '0rem !important', padding: '0rem' }}>
                         <h3>Únete a nuestra comunidad</h3>
                         <Form>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -78,8 +81,8 @@ const Home = () => {
                             </Button>
                         </Form>
                     </Col>
-                    <Col lg={6} style={{margin: '0rem !important', padding: '0rem'}}>
-                        <img src={amigosLibreria} alt="" className='suscribe-img'/>
+                    <Col lg={6} style={{ margin: '0rem !important', padding: '0rem' }}>
+                        <img src={amigosLibreria} alt="" className='suscribe-img' />
                     </Col>
                 </Row>
             </div>

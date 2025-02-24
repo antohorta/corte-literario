@@ -113,76 +113,156 @@
             "dimensiones": "14 x 21 cm",
             "calificacion": 0,
             "novedad": true
+        },
+        {
+            "isbn": "9788433927101",
+            "titulo": "Triste tigre",
+            "autor": "Neige Sinno",
+            "portada": "",
+            "resumen": "Triste tigre no es un libro: es una bomba que se detona a través de la lectura; una aventura del pensamiento que nos propone acompañar a la narradora en sus cuestionamientos alrededor de la violencia sexual, del mal, del trauma, del silencio. ¿Cómo contar una historia que no se puede contar? ¿Cómo escuchar una historia que nadie quiere escuchar?",
+            "paginas": 248,
+            "precio": 24000,
+            "stock": 10,
+            "genero": "Biografía",
+            "editorial": "Anagrama",
+            "idioma": "Español",
+            "encuadernacion": "Tapa blanda",
+            "publicacion": 2023,
+            "descuento": 10,
+            "dimensiones": "14 x 21 cm",
+            "calificacion": 0,
+            "novedad": true
+        },
+        {
+            "isbn": "9788418395659",
+            "titulo": "El banquete",
+            "autor": "Platón",
+            "portada": "",
+            "resumen": "Triste tigre no es un libro: es una bomba que se detona a través de la lectura; una aventura del pensamiento que nos propone acompañar a la narradora en sus cuestionamientos alrededor de la violencia sexual, del mal, del trauma, del silencio. ¿Cómo contar una historia que no se puede contar? ¿Cómo escuchar una historia que nadie quiere escuchar?",
+            "paginas": 112,
+            "precio": 12900,
+            "stock": 0,
+            "genero": "Histórico",
+            "editorial": "Alma",
+            "idioma": "Español",
+            "encuadernacion": "Tapa dura",
+            "publicacion": 2021,
+            "descuento": 10,
+            "dimensiones": "15,5 x 23 cm",
+            "calificacion": 0,
+            "novedad": true
         }
     ],
     "generos": [
         {
             "id": 1,
-            "nombre": "Arquitectura"
+            "genero": "Arquitectura"
         },
         {
             "id": 2,
-            "nombre": "Arte"
+            "genero": "Arte"
         },
         {
             "id": 3,
-            "nombre": "Aventura"
+            "genero": "Aventura"
         },
         {
             "id": 4,
-            "nombre": "Biografía"
+            "genero": "Biografía"
         },
         {
             "id": 5,
-            "nombre": "Ciencia Ficción"
+            "genero": "Ciencia Ficción"
         },
         {
             "id": 6,
-            "nombre": "Diseño"
+            "genero": "Diseño"
         },
         {
             "id": 7,
-            "nombre": "Ensayo"
+            "genero": "Ensayo"
         },
         {
             "id": 8,
-            "nombre": "Fantasía"
+            "genero": "Fantasía"
         },
         {
             "id": 9,
-            "nombre": "Ficción"
+            "genero": "Ficción"
         },
         {
             "id": 10,
-            "nombre": "Fotografía"
+            "genero": "Fotografía"
         },
         {
             "id": 11,
-            "nombre": "Histórico"
+            "genero": "Histórico"
         },
         {
             "id": 12,
-            "nombre": "Misterio"
+            "genero": "Misterio"
         },
         {
             "id": 13,
-            "nombre": "No Ficción"
+            "genero": "No Ficción"
         },
         {
             "id": 14,
-            "nombre": "Poesía"
+            "genero": "Poesía"
         },
         {
             "id": 15,
-            "nombre": "Romance"
+            "genero": "Romance"
         },
         {
             "id": 16,
-            "nombre": "Terror"
+            "genero": "Terror"
         },
         {
             "id": 17,
-            "nombre": "Teatro"
+            "genero": "Teatro"
+        }
+    ],
+    "editoriales": [
+        {
+            "id": 20,
+            "editorial": "Phaidon"
+        },
+        {
+            "id": 21,
+            "editorial": "Gustavo Gili"
+        },
+        {
+            "id": 22,
+            "editorial": "Anagrama"
+        },
+        {
+            "id": 23,
+            "editorial": "FCE"
+        },
+        {
+            "id":24,
+            "editorial": "Alma"
+        },
+        {
+            "id": 25,
+            "editorial": "..."
+        },
+        {
+            "id": 26,
+            "editorial": "..."
+        },
+        {
+            "id": 27,
+            "editorial": "..."
+        },
+        {
+            "id": 28,
+            "editorial": "..."
+        },
+        {
+            "id": 29,
+            "editorial": "..."
         }
     ]
 }
