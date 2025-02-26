@@ -4,6 +4,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import '../styles/nav.css'
+import '../styles/offcanvas.css'
 import { Link } from 'react-router-dom';
 import { IGenre } from '../interfaces/IGenre';
 import { useFetch } from '../hooks/useFetch';
@@ -12,6 +13,11 @@ const NavBar = () => {
 
     // OBTENER GÉNEROS AL CARGAR COMPONENTE
     const { data: genres, loading: loadingGenres, error: errorGenres } = useFetch<IGenre[]>('http://localhost:3000/generos');
+
+    /* HANDLE PARA EVITAR QUE DROPDOWN SE CIERRE */
+    const handleNoPropagation = (e: React.MouseEvent) => {
+        e.stopPropagation();
+    };
 
     if (loadingGenres) return <p>Cargando...</p>
     if (errorGenres) return <p>Error en la consulta de datos {errorGenres}</p>
@@ -45,7 +51,8 @@ const NavBar = () => {
                                         {genres && genres.map((genero) => (
                                             <NavDropdown.Item
                                                 key={genero.id}
-                                                href={`#${genero.id}`}>
+                                                href={`#${genero.id}`}
+                                                onClick={handleNoPropagation}>
                                                 {genero.genero}
                                             </NavDropdown.Item>
                                         ))}

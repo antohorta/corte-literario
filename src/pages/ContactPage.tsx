@@ -50,7 +50,7 @@ const ContactPage = (props: ContactPageProps) => {
                             </Form.Group>
 
                             <Button variant="primary" type="submit">
-                                ENVIAR
+                                Enviar
                             </Button>
                         </Form>
                     </Col>

@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import MainLayout from "../layout/MainLayout"
 import '../styles/catalog.css'
+import '../styles/offcanvas.css'
 import { useFetch } from '../hooks/useFetch';
 import { IBook } from '../interfaces/IBook';
 import BookCard from '../components/BookCard';
@@ -35,13 +36,15 @@ const CatalogPage = (props: CatalogPageProps) => {
     /* LLAMADA PARA OBTENER EDITORIALES */
     const { data: editorials, loading: loadingEditorials, error: errorEditorials } = useFetch<IEditorial[]>('http://localhost:3000/editoriales');
 
+    /* HANDLE PARA EVITAR QUE DROPDOWN SE CIERRE */
+    const handleNoPropagation = (e: React.MouseEvent) => {
+        e.stopPropagation();
+    };
 
     if (loadingBooks || loadingGenres || loadingEditorials) return <p>Cargando...</p>
     if (errorBook) return <p>Error en la consulta de datos {errorBook}</p>
     if (errorGenres) return <p>Error en la consulta de datos {errorGenres}</p>
     if (errorEditorials) return <p>Error en la consulta de datos {errorGenres}</p>
-
-    console.log(`los genero son: ${genres}`)
 
     return (
         <MainLayout>
@@ -74,36 +77,47 @@ const CatalogPage = (props: CatalogPageProps) => {
 
                 <Offcanvas show={show} onHide={handleClose}>
                     <Offcanvas.Header closeButton>
-                        <Offcanvas.Title>FILTRAR Y ORDENAR</Offcanvas.Title>
+                        <Offcanvas.Title></Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body className='offcanvas-filter'>
+
                         <NavDropdown title="ORDENAR POR">
-                            <NavDropdown.Item>
-                                <input type="checkbox" id='precio-mayor' />
-                                <label htmlFor="precio-mayor">PRECIO (MAYOR A MENOR)</label>
+                            <NavDropdown.Item onClick={handleNoPropagation} >
+                                <input type="checkbox" id='precio-mayor' onClick={handleNoPropagation} />
+                                <label htmlFor="precio-mayor" onClick={handleNoPropagation} >PRECIO (MAYOR A MENOR)</label>
+                            </NavDropdown.Item>
 
-                                <input type="checkbox" id='precio-menor' />
-                                <label htmlFor="precio-menor">PRECIO (MENOR A MAYOR)</label>
+                            <NavDropdown.Item onClick={handleNoPropagation} >
+                                <input type="checkbox" id='precio-menor' onClick={handleNoPropagation} />
+                                <label htmlFor="precio-menor" onClick={handleNoPropagation} >PRECIO (MENOR A MAYOR)</label>
+                            </NavDropdown.Item>
 
-                                <input type="checkbox" id='nombre-a' />
-                                <label htmlFor="nombre-a">NOMBRE (A a Z)</label>
+                            <NavDropdown.Item onClick={handleNoPropagation} >
+                                <input type="checkbox" id='nombre-a' onClick={handleNoPropagation} />
+                                <label htmlFor="nombre-a" onClick={handleNoPropagation} >NOMBRE (A a Z)</label>
+                            </NavDropdown.Item>
 
-                                <input type="checkbox" id='nombre-z' />
-                                <label htmlFor="nombre-z">NOMBRE (Z a A)</label>
-
+                            <NavDropdown.Item onClick={handleNoPropagation} >
+                                <input type="checkbox" id='nombre-z' onClick={handleNoPropagation} />
+                                <label htmlFor="nombre-z" onClick={handleNoPropagation}>NOMBRE (Z a A)</label>
                             </NavDropdown.Item>
                         </NavDropdown>
 
                         <NavDropdown title="GÉNERO">
                             {/* PINTAR GÉNEROS */}
                             {genres && genres.map((genero) => (
-                                <NavDropdown.Item key={genero.id}>
+                                <NavDropdown.Item key={genero.id} onClick={handleNoPropagation}>
                                     <input
                                         type="checkbox"
                                         name={`genre-${genero.id}`}
                                         id={`genre-${genero.id}`}
-                                        value={`genre-${genero.id}`} />
-                                    <label htmlFor={`genre-${genero.id}`}>{genero.genero}</label>
+                                        value={`genre-${genero.id}`}
+                                        onClick={handleNoPropagation} />
+                                    <label
+                                        htmlFor={`genre-${genero.id}`}
+                                        onClick={handleNoPropagation}>
+                                        {genero.genero}
+                                    </label>
                                 </NavDropdown.Item>
                             ))}
                         </NavDropdown>
@@ -111,31 +125,35 @@ const CatalogPage = (props: CatalogPageProps) => {
                         <NavDropdown title="EDITORIAL">
                             {/* PINTAR EDITORIALES */}
                             {editorials && editorials.map((editorial) => (
-                                <NavDropdown.Item key={editorial.id}>
+                                <NavDropdown.Item key={editorial.id} onClick={handleNoPropagation}>
                                     <input
                                         type="checkbox"
                                         name={`editorial-${editorial.id}`}
                                         id={`editorial-${editorial.id}`}
-                                        value={`editorial-${editorial.id}`} />
-                                    <label htmlFor={`editorial-${editorial.id}`}>{editorial.editorial}</label>
+                                        value={`editorial-${editorial.id}`}
+                                        onClick={handleNoPropagation} />
+                                    <label
+                                        htmlFor={`editorial-${editorial.id}`}
+                                        onClick={handleNoPropagation}>
+                                        {editorial.editorial}
+                                    </label>
                                 </NavDropdown.Item>
                             ))}
                         </NavDropdown>
 
                         <NavDropdown
                             title="PRECIO">
-                            <NavDropdown.Item>
-                                
+                            <NavDropdown.Item onClick={handleNoPropagation}>
+
                             </NavDropdown.Item>
                         </NavDropdown>
 
-                        <Button>APLICAR FILTROS</Button>
-                        <Button>BORRAR TODO</Button>
+                        <Button id='primary-button'>Filtrar</Button>
+                        <Button id='secondary-button'>Borrar</Button>
 
-
-                    </Offcanvas.Body>
-                </Offcanvas>
-            </Container>
+                    </Offcanvas.Body >
+                </Offcanvas >
+            </Container >
         </MainLayout >
     )
 }

@@ -77,7 +77,7 @@ const Home = () => {
                                 <Form.Control type="email" placeholder="Ingresa tu mail" />
                             </Form.Group>
                             <Button variant="primary" type="submit">
-                                SUSCRÍBETE
+                                Suscríbete
                             </Button>
                         </Form>
                     </Col>

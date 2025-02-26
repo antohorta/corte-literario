@@ -9,7 +9,7 @@ const BookCard = (props: BookCardProps) => {
     return (
         <div className='card-container'>
             <div className='card-img-container'>
-                <button className='add-cart-button'>AÑADIR AL CARRO</button>
+                <button className='add-cart-button'>Añadir al carro</button>
             </div>
 
             <div className='card-info-container'>

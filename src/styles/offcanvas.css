@@ -1,0 +1,162 @@
+.offcanvas,
+.offcanvas-header,
+.offcanvas-body,
+.dropdown-menu {
+    background-color: #222 !important;
+    border: none !important;
+}
+
+.offcanvas-body {
+    padding: 0.5rem 1.5rem !important;
+}
+
+.dropdown-menu.show {
+    width: 100% !important;
+}
+
+.dropdown-menu.show a {
+    color: #D9D9D9 !important;
+    font-family: "Roboto Mono" !important;
+    font-size: 1rem !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: normal !important;
+    padding-left: 2rem !important;
+}
+
+.offcanvas a,
+.offcanvas-header a,
+.offcanvas-body a {
+    color: #D9D9D9 !important;
+    font-family: "Roboto Mono" !important;
+    font-size: 1.6rem !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: normal !important;
+    padding: 0.5rem !important;
+}
+
+.offcanvas a:hover,
+.offcanvas-header a:hover,
+.offcanvas-body a:hover,
+.offcanvas a:active,
+.offcanvas-header a:active,
+.offcanvas-body a:active,
+.offcanvas a:focus,
+.offcanvas-header a:focus,
+.offcanvas-body a:focus,
+.offcanvas a:focus-visible,
+.offcanvas-header a:focus-visible,
+.offcanvas-body a:focus-visible {
+    color: #D9D9D9 !important;
+    box-shadow: none !important;
+    background-color: #222 !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.offcanvas a:hover,
+.offcanvas-header a:hover,
+.offcanvas-body a:hover,
+.offcanvas a:active,
+.offcanvas-header a:active,
+.offcanvas-body a:active {
+    text-decoration: line-through !important;
+}
+
+
+/* CHECKBOXES */
+.dropdown-menu.show input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #D9D9D9;
+    border-radius: 0px;
+    background-color: #222;
+    cursor: pointer;
+    position: relative;
+    margin-right: 0.4rem;
+}
+
+.dropdown-menu.show input[type="checkbox"]:checked {
+    background-color: #D9D9D9;
+}
+
+.dropdown-menu.show input[type="checkbox"]:checked::before {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    color: #222;
+}
+
+
+/* BOTONES */
+.btn-close {
+    --bs-btn-close-bg: url('data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23D9D9D9"%3e%3cpath d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/%3e%3c/svg%3e') !important;
+}
+
+#primary-button,
+#primary-button:hover,
+#primary-button:focus,
+#primary-button:focus-visible {
+    width: 100% !important;
+    padding: 0.5rem 1rem 0.5rem 1rem !important;
+    margin: 0.5rem 0rem 0.5rem 0rem !important;
+    border-radius: 0rem !important;
+    background-color: #D9D9D9 !important;
+    border: 2px solid #222 !important;
+    color: #222 !important;
+    font-family: "Roboto Mono" !important;
+    font-size: 0.9rem !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    box-shadow: none !important;
+}
+
+#primary-button:hover {
+    box-shadow: 0.3rem 0.3rem #D9D9D9 !important;
+    border: 2px solid #222 !important;
+}
+
+#primary-button:active {
+    background-color: #222 !important;
+    color: #D9D9D9 !important;
+    box-shadow: 0.3rem 0.3rem #D9D9D9 !important;
+    border: 2px solid #D9D9D9 !important;
+}
+
+#secondary-button,
+#secondary-button:hover,
+#secondary-button:focus,
+#secondary-button:focus-visible {
+    width: 100% !important;
+    padding: 0.5rem 1rem 0.5rem 1rem !important;
+    margin: 0.5rem 0rem 0.5rem 0rem !important;
+    border-radius: 0rem !important;
+    background-color: #222 !important;
+    border: 2px solid #D9D9D9 !important;
+    color: #D9D9D9 !important;
+    font-family: "Roboto Mono" !important;
+    font-size: 0.9rem !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    box-shadow: none !important;
+}
+
+#secondary-button:hover {
+    box-shadow: 0.3rem 0.3rem #D9D9D9 !important;
+}
+
+#secondary-button:active {
+    background-color: #D9D9D9 !important;
+    color: #222 !important;
+    box-shadow: 0.3rem 0.3rem #D9D9D9 !important;
+    border: 2px solid #222 !important;
+}
