@@ -50,13 +50,19 @@ const BookSlide = () => {
         ]
     };
 
+    /* FILTRAR LIBROS QUE SEAN NOVEDAD */
+    const filteredBooks = books?.filter(book => book.novedad === true);
+
     return (
         <Container fluid className='slide-container'>
             <h2>Novedades</h2>
             <div className='slide-cards-container'>
                 <Slider {...settings}>
-                    {books && books.map((book) => (
-                        <BookCard key={book.isbn} book={book}></BookCard>
+                    {filteredBooks && filteredBooks.map((book) => (
+                        <BookCard
+                            key={book.isbn}
+                            book={book}
+                            noStock={book.stock === 0} />
                     ))}
                 </Slider>
             </div>

@@ -73,15 +73,29 @@
     bottom: -3rem;
     z-index: 1;
     transition: all 0.3s ease-in-out;
+    visibility: visible;
+    opacity: 1;
 }
 
 .card-container:hover .add-cart-button {
     display: block;
     bottom: 0rem;
+    opacity: 1;
 }
 
 .add-cart-button:active {
     background-color: #222 !important;
     color: #D9D9D9 !important;
     border: 2px solid #D9D9D9 !important;
+}
+
+/* SIN STOCK */
+.card-container.no-stock {
+    opacity: 0.5;
+}
+
+.add-cart-button.hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }

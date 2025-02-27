@@ -51,7 +51,7 @@ const CatalogPage = (props: CatalogPageProps) => {
             <Container className='catalog-page-container'>
                 <Row>
                     <Col lg={12}>
-                        <h2 className='catalog-page-title'>CATÁLOGO</h2>
+                        <h2 className='catalog-page-title'>Catálogo</h2>
                     </Col>
                 </Row>
 
@@ -70,7 +70,10 @@ const CatalogPage = (props: CatalogPageProps) => {
                 <Row>
                     <Col lg={12} className='catalog-cards-container'>
                         {books && books.map((book) => (
-                            <BookCard key={book.isbn} book={book}></BookCard>
+                            <BookCard
+                                key={book.isbn}
+                                book={book}
+                                noStock={book.stock === 0} />
                         ))}
                     </Col>
                 </Row>

@@ -11,7 +11,7 @@ import { useFetch } from '../hooks/useFetch';
 
 const NavBar = () => {
 
-    // OBTENER GÉNEROS AL CARGAR COMPONENTE
+    /* OBTENER GÉNEROS AL CARGAR COMPONENTE */
     const { data: genres, loading: loadingGenres, error: errorGenres } = useFetch<IGenre[]>('http://localhost:3000/generos');
 
     /* HANDLE PARA EVITAR QUE DROPDOWN SE CIERRE */
@@ -57,16 +57,16 @@ const NavBar = () => {
                                             </NavDropdown.Item>
                                         ))}
                                     </NavDropdown>
-                                    <Nav.Link as={Link} to={'/nosotros'}>MYSTERY BOXES</Nav.Link>
-                                    <Nav.Link as={Link} to={'/nosotros'}>SUSCRIPCIONES</Nav.Link>
+                                    <Nav.Link as={Link} to={'/mystery-boxes'}>MYSTERY BOXES</Nav.Link>
+                                    <Nav.Link as={Link} to={'/suscripciones'}>SUSCRIPCIONES</Nav.Link>
                                     <Nav.Link as={Link} to={'/nosotros'}>NOSOTROS</Nav.Link>
                                     <Nav.Link as={Link} to={'/contacto'}>CONTACTO</Nav.Link>
                                 </Nav>
                             </Offcanvas.Body>
                         </Navbar.Offcanvas>
-                        <Nav.Link href="#link">BUSCAR</Nav.Link>
-                        <Nav.Link href="#link">CUENTA</Nav.Link>
-                        <Nav.Link href="#link">CARRO(0)</Nav.Link>
+                        <Nav.Link as={Link} to={'/buscar'}>BUSCAR</Nav.Link>
+                        <Nav.Link as={Link} to={'/cuenta'}>CUENTA</Nav.Link>
+                        <Nav.Link as={Link} to={'/carro'}>CARRO(0)</Nav.Link>
                     </Container>
                 </Navbar>
             ))}

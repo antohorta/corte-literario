@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import '../styles/footer.css'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -12,9 +13,10 @@ const Footer = () => {
                 <Row style={{ margin: '0px', padding: '0px' }}>
                     <Col lg={4}>
                         <p className='footer-link-title'>Preguntas frecuentes</p>
-                        <a href="" className='footer-link'>Contacto</a>
-                        <a href="" className='footer-link'>Cambios y devoluciones</a>
-                        <a href="" className='footer-link'>Políticas de despacho</a>
+                        <Link to={'/contacto'} className='footer-link'>Contacto</Link>
+                        <Link to={'/cambios'} className='footer-link'>Cambios y devoluciones</Link>
+                        <Link to={'/politicas'} className='footer-link'>Políticas de despacho</Link>
+                        <Link to={'/nosotros'} className='footer-link'>Sobre nosotros</Link>
                     </Col>
 
                     <Col lg={4}>
