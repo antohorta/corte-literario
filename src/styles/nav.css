@@ -57,3 +57,106 @@
     margin-right: 0rem !important;
     border: none !important;
 }
+
+
+/* BARRA DE BÚSQUEDA */
+
+.search-nav .offcanvas-header {
+    padding-bottom: 0rem !important;
+}
+
+.search-input-container .form-control,
+.search-input-container .form-control:hover,
+.search-input-container .form-control:active,
+.search-input-container .form-control:focus,
+.search-input-container .form-control:focus-visible {
+    border-radius: 0rem;
+    background-color: #222;
+    border-bottom: 2px solid #D9D9D9;
+    border-left: transparent;
+    border-right: transparent;
+    border-top: transparent;
+    box-shadow: none;
+    outline: none;
+    color: #D9D9D9;
+    margin-top: 0rem;
+    font-family: "Roboto Mono";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.search-input-container .form-control::placeholder {
+    color: #D9D9D9;
+}
+
+.search-nav.offcanvas.offcanvas-top {
+    height: fit-content;
+    max-height: 80vh;
+}
+
+@media (max-width: 768px) {
+    .search-nav.offcanvas.offcanvas-top {
+        max-height: 100vh;
+    }
+}
+
+
+/* RESULTADOS BÚSQUEDA */
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.card-result-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.card-result-img-container {
+    background-color: #858585;
+    width: 10rem;
+    height: 14rem;
+    margin: 0.5rem;
+}
+
+.card-result-info-container .titulo,
+.card-result-info-container .autor {
+    font-family: "Roboto Mono";
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0.75rem 0rem 0.3rem 0rem;
+}
+
+.card-result-info-container .titulo {
+    color: #D9D9D9;
+}
+
+.card-result-info-container .autor {
+    color: #A2A2A4;
+}
+
+.all-results-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#all-results-link {
+    font-family: "Roboto Mono";
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0.75rem 0rem 0.3rem 0rem;
+    color: #D9D9D9;
+}
