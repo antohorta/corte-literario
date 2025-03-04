@@ -1,0 +1,74 @@
+.cart-list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cart-list.offcanvas {
+    width: 40vw !important;
+}
+
+.cart-list-card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.cart-list-title {
+    color: #D9D9D9 !important;
+    font-family: "Roboto Mono" !important;
+    font-size: 1.6rem !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: normal !important;
+    padding: 0.5rem !important;
+}
+
+.cart-list-img-container {
+    width: 6rem;
+    height: 9.7rem;
+    background-color: #858585;
+    margin: 1rem 1rem;
+}
+
+.cart-list-info-container {
+    width: 60%;
+    padding: 1rem 1rem;
+}
+
+.cart-list-info-container .titulo,
+.cart-list-info-container .autor {
+    font-family: "Roboto Mono";
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0.75rem 0rem 0.3rem 0rem;
+}
+
+.cart-list-info-container .titulo {
+    color: #D9D9D9;
+}
+
+.cart-list-info-container .autor {
+    color: #A2A2A4;
+}
+
+.delete-button,
+.increase-button,
+.decrease-button {
+    border: none;
+    background-color: transparent;
+    color: #D9D9D9;
+}
+
+.cart-list-redirect-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cart-list-redirect-container #primary-button,
+.cart-list-redirect-container #secondary-button {
+    width: 45% !important;
+}

@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import '../styles/nav.css'
 import '../styles/offcanvas.css'
+import '../styles/cart.css'
 import { Link/*, useNavigate */ } from 'react-router-dom';
 import { IGenre } from '../interfaces/IGenre';
 import { useFetch } from '../hooks/useFetch';
@@ -17,7 +18,10 @@ const NavBar = () => {
     /*     const navigate = useNavigate();
      */
     /* ESTADOS DE OFFCANVAS BARRA BÚSQUEDA */
-    const [show, setShow] = useState(false);
+    const [showSearch, setShowSearch] = useState(false);
+
+    /* ESTADOS DE OFFCANVAS CARRO */
+    const [showCart, setShowCart] = useState(false);
 
     /* ESTADOS PARA BÚSQUEDA */
     const [query, setQuery] = useState('');
@@ -34,8 +38,12 @@ const NavBar = () => {
     };
 
     /* HANDLES DE OFFCANVAS BARRA BÚSQUEDA */
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleCloseSearch = () => setShowSearch(false);
+    const handleShowSearch = () => setShowSearch(true);
+
+    /* HANDLES DE OFFCANVAS CARRO */
+    const handleCloseCart = () => setShowCart(false);
+    const handleShowCart = () => setShowCart(true);
 
     /* HANDLES DE OFFCANVAS BARRA BÚSQUEDA */
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -101,8 +109,8 @@ const NavBar = () => {
                         </Navbar.Offcanvas>
 
                         {/* BARRA DE BÚSQUEDA */}
-                        <Nav.Link as={Link} to={'#'} onClick={handleShow}>BUSCAR</Nav.Link>
-                        <Offcanvas show={show} onHide={handleClose} placement="top" className="search-nav">
+                        <Nav.Link as={Link} to={'#'} onClick={handleShowSearch}>BUSCAR</Nav.Link>
+                        <Offcanvas show={showSearch} onHide={handleCloseSearch} placement="top" className="search-nav">
                             <Offcanvas.Body>
                                 <Offcanvas.Header closeButton></Offcanvas.Header>
                                 <Form className='search-input-container'>
@@ -147,8 +155,44 @@ const NavBar = () => {
                             </Offcanvas.Body>
                         </Offcanvas>
 
-                        <Nav.Link as={Link} to={'/cuenta'}>CUENTA</Nav.Link>
-                        <Nav.Link as={Link} to={'/carro'}>CARRO(0)</Nav.Link>
+                        <Nav.Link as={Link} to={'/login'}>CUENTA</Nav.Link>
+
+                        {/* CARRITO DE COMPRAS */}
+                        <Nav.Link href='#' onClick={handleShowCart}>CARRO(0)</Nav.Link>
+
+                        <Offcanvas show={showCart} onHide={handleCloseCart} placement='end' className='cart-list'>
+                            <Offcanvas.Header closeButton>
+                                <Offcanvas.Title className='cart-list-title'>CARRO (0)</Offcanvas.Title>
+                            </Offcanvas.Header>
+                            <Offcanvas.Body className='cart-list-container'>
+                                <div className='cart-list-card-container'>
+                                    <div className='cart-list-img-container'>
+                                        <img src="" alt="" />
+                                    </div>
+
+                                    <div className='cart-list-info-container'>
+                                        <p className='titulo'>Título del libro</p>
+                                        <p className='autor'>Autor del libro</p>
+                                        <p className='titulo'>$20.990</p>
+                                    </div>
+
+                                    <div className='cart-list-buttons-container'>
+                                        <button className='delete-button'>x</button>
+                                        <button className='increase-button'>+</button>
+                                        <button className='decrease-button'>-</button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p>Total: $20.000</p>
+                                </div>
+
+                                <div className='cart-list-redirect-container'>
+                                    <button id='secondary-button'>Ver carro</button>
+                                    <button id='primary-button'>Ir a pagar</button>
+                                </div>
+                            </Offcanvas.Body>
+                        </Offcanvas>
                     </Container>
                 </Navbar>
             ))}
