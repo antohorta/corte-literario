@@ -26,6 +26,10 @@
     overflow: hidden;
 }
 
+.card-container a {
+    text-decoration: none !important;
+}
+
 .card-info-container .titulo {
     color: #222;
     font-family: "Roboto Mono";

@@ -1,0 +1,26 @@
+.quantity-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.quantity-buttons-container button {
+    border: none;
+    background-color: transparent;
+}
+
+.quantity-buttons-container button:hover svg path,
+.quantity-buttons-container button:active svg path {
+    fill: #D9D9D9;
+}
+
+.quantity-buttons-container span {
+    font-family: "Roboto Mono";
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0.75rem 0rem 0.3rem 0rem;
+    color: #D9D9D9;
+}

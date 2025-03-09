@@ -40,18 +40,16 @@ const Home = () => {
 
             {/* MYSTERY BOXES */}
             <div className="mystery-container">
-                <Row style={{ margin: '0px', padding: '0px' }}>
-                    <Col lg={7}>
-                        <img src={mysteryBox} alt="" />
-                    </Col>
-                    <Col lg={5}>
-                        <h2>Mystery Boxes</h2>
+                <Row>
+                    <Col lg={6}>
+                        <h2><a href="">Mystery Boxes</a></h2>
                         <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
                             <path d="M119.542 64L74.6667 108.876L67.1242 101.333L99.1242 69.3334H10.6667V58.6667H99.1242L67.1242 26.6667L74.6667 19.1243L119.542 64Z" fill="#D9D9D9" />
                         </svg>
                     </Col>
-                    <Col className="about-link" lg={7}>
-                        <p>Accede a nuestra curaduría personalizada.</p>
+                    <Col lg={6}>
+                        <img src={mysteryBox} alt="" />
+                        <p>Accede a nuestra <a href="">curaduría personalizada.</a></p>
                     </Col>
                 </Row>
             </div>
@@ -62,7 +60,7 @@ const Home = () => {
             {/* ESTILO LITERARIO */}
             <div className="style-container">
                 <div className="style-image-container">
-                    <img src={mujerLeyendo} alt="Mujer leyendo" className="img-fluid"/>
+                    <img src={mujerLeyendo} alt="Mujer leyendo" className="img-fluid" />
                     <Link to={'/mystery-boxes'}>Tu estilo literario</Link>
                 </div>
             </div>

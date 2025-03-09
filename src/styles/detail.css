@@ -1,0 +1,36 @@
+.detail-title {
+    color: #D9D9D9;
+    font-family: "Roboto Mono";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+.detail-text {
+    color: #D9D9D9;
+    font-family: "Roboto Mono";
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.detail-button {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0rem;
+    background-color: #222;
+    border: 2px solid #D9D9D9;
+    color: #D9D9D9;
+    font-family: "Roboto Mono";
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    box-shadow: none;
+}
+
+.detail-accordion .accordion-item,
+.detail-accordion .accordion-header {
+    background-color: #222 !important;
+}

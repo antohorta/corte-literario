@@ -15,7 +15,7 @@ interface IBook {
     descuento: number,
     dimensiones: string,
     calificacion: number,
-    novedad: boolean
+    novedad: boolean,
 }
 
-export type {IBook}
+export type { IBook }

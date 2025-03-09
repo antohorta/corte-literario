@@ -9,19 +9,25 @@ import ContactPage from './pages/ContactPage'
 import CatalogPage from './pages/CatalogPage'
 import LogInPage from './pages/LogInPage'
 import SignUpPage from './pages/SignUpPage'
+import { Provider } from 'react-redux'
+import { store } from './states/store'
+import BookDetailPage from './pages/BookDetailPage'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<HomePage title='Corte Literario'/>} />
-        <Route path='/nosotros' element={<AboutPage title='Nosotros'/>} />
-        <Route path='/contacto' element={<ContactPage title='Contacto'/>} />
-        <Route path='/catalogo' element={<CatalogPage title='Catálogo'/>} />
-        <Route path='/login' element={<LogInPage title='Iniciar sesión'/>} />
-        <Route path='/signup' element={<SignUpPage title='Crear cuenta'/>} />
-        <Route path="*" element={<HomePage title='Corte Literario'/>} />
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomePage title='Corte Literario' />} />
+          <Route path='/nosotros' element={<AboutPage title='Nosotros' />} />
+          <Route path='/contacto' element={<ContactPage title='Contacto' />} />
+          <Route path='/catalogo' element={<CatalogPage title='Catálogo' />} />
+          <Route path='/libro/:isbn' element={<BookDetailPage title='Detalles del Libro' />} />
+          <Route path='/login' element={<LogInPage title='Iniciar sesión' />} />
+          <Route path='/signup' element={<SignUpPage title='Crear cuenta' />} />
+          <Route path="*" element={<HomePage title='Corte Literario' />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </StrictMode>,
 )

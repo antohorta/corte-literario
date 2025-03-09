@@ -11,10 +11,12 @@
     "json": "json-server --watch src/data/data.json"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.6.0",
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^18.3.1",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.5",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1"

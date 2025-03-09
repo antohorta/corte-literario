@@ -12,11 +12,17 @@ import { useFetch } from '../hooks/useFetch';
 import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { IBook } from '../interfaces/IBook';
+import QuantityButtons from './QuantityButtons';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootType } from '../states/store';
 
 const NavBar = () => {
 
-    /*     const navigate = useNavigate();
-     */
+    const dispatch = useDispatch();
+    const cartItems = useSelector((state: RootType) => state.cart.items);
+    const total = cartItems.reduce((acc, item) => acc + (item.precio * item.cantidad), 0); // Calcular el total
+
+
     /* ESTADOS DE OFFCANVAS BARRA BÚSQUEDA */
     const [showSearch, setShowSearch] = useState(false);
 
@@ -55,9 +61,6 @@ const NavBar = () => {
             return;
         }
     }, [query]);
-
-    console.log(`La búsqueda es: ${query}`);
-    console.log(`Los resultados son: ${results}`);
 
     if (loadingGenres) return <p>Cargando...</p>;
     if (errorGenres) return <p>Error en la consulta de datos {errorGenres}</p>;
@@ -158,33 +161,39 @@ const NavBar = () => {
                         <Nav.Link as={Link} to={'/login'}>CUENTA</Nav.Link>
 
                         {/* CARRITO DE COMPRAS */}
-                        <Nav.Link href='#' onClick={handleShowCart}>CARRO(0)</Nav.Link>
+                        <Nav.Link href='#' onClick={handleShowCart}>CARRO({ })</Nav.Link>
 
                         <Offcanvas show={showCart} onHide={handleCloseCart} placement='end' className='cart-list'>
                             <Offcanvas.Header closeButton>
                                 <Offcanvas.Title className='cart-list-title'>CARRO (0)</Offcanvas.Title>
                             </Offcanvas.Header>
                             <Offcanvas.Body className='cart-list-container'>
-                                <div className='cart-list-card-container'>
-                                    <div className='cart-list-img-container'>
-                                        <img src="" alt="" />
-                                    </div>
 
-                                    <div className='cart-list-info-container'>
-                                        <p className='titulo'>Título del libro</p>
-                                        <p className='autor'>Autor del libro</p>
-                                        <p className='titulo'>$20.990</p>
-                                    </div>
+                                {cartItems.length === 0 ? (
+                                    <p>Carrito vacío</p>
+                                ) : (
+                                    cartItems.map((book) => (
+                                        <div key={book.isbn} className='cart-list-card-container'>
+                                            <div className='cart-list-img-container'>
+                                                <img src={book.portada} alt={book.titulo} />
+                                            </div>
 
-                                    <div className='cart-list-buttons-container'>
-                                        <button className='delete-button'>x</button>
-                                        <button className='increase-button'>+</button>
-                                        <button className='decrease-button'>-</button>
-                                    </div>
-                                </div>
+                                            <div className='cart-list-info-container'>
+                                                <p className='titulo'>{book.titulo}</p>
+                                                <p className='autor'>{book.autor}</p>
+                                                <p className='titulo'>${book.precio.toFixed(2)}</p>
+                                            </div>
+
+                                            <div className='cart-list-buttons-container'>
+                                                <button className='delete-button' onClick={() => handleRemoveItem(book.isbn)}>x</button>
+                                                <QuantityButtons isbn={book.isbn} />
+                                            </div>
+                                        </div>
+                                    ))
+                                )}
 
                                 <div>
-                                    <p>Total: $20.000</p>
+                                    <p>Total: ${total.toFixed(2)}</p>
                                 </div>
 
                                 <div className='cart-list-redirect-container'>
