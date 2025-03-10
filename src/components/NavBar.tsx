@@ -20,8 +20,6 @@ const NavBar = () => {
 
     const dispatch = useDispatch();
     const cartItems = useSelector((state: RootType) => state.cart.items);
-    const total = cartItems.reduce((acc, item) => acc + (item.precio * item.cantidad), 0); // Calcular el total
-
 
     /* ESTADOS DE OFFCANVAS BARRA BÚSQUEDA */
     const [showSearch, setShowSearch] = useState(false);
