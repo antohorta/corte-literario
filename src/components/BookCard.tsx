@@ -3,6 +3,7 @@ import '../styles/book-card.css'
 import { addToCart } from '../states/cartSlice';
 import { ICart } from '../interfaces/ICart';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 interface BookCardProps {
     book: ICart;
@@ -13,7 +14,8 @@ const BookCard = (props: BookCardProps) => {
 
     const dispatch = useDispatch();
 
-    const handleAddToCart = () => {
+    const handleAddToCart = (e: React.MouseEvent) => {
+        e.preventDefault();
         dispatch(addToCart(props.book));
     };
 

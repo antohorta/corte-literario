@@ -15,3 +15,13 @@
     padding: 0rem;
     margin: 0rem 0rem 1rem 0rem;
 }
+
+.slide-cards-container {
+    margin: 2rem;
+}
+
+.slide-cards-container .slick-initialized .slick-slide {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

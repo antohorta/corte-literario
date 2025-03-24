@@ -1,6 +1,6 @@
 .card-container {
-    width: 14.83rem;
-    height: 24rem;
+    width: 13rem;
+    height: auto;
     flex-shrink: 0;
     border-radius: 0rem;
     border: none;
@@ -21,8 +21,8 @@
 
 .card-img-container,
 .card-img-container .img {
-    width: 14.83rem;
-    height: 17rem;
+    width: 13rem;
+    height: 17.4rem;
     overflow: hidden;
 }
 
@@ -33,7 +33,7 @@
 .card-info-container .titulo {
     color: #222;
     font-family: "Roboto Mono";
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -53,7 +53,7 @@
 .card-container .precio {
     color: #222;
     font-family: "Roboto Mono";
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;

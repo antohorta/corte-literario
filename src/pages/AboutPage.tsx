@@ -2,10 +2,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import MainLayout from "../layout/MainLayout"
-import chair from '../assets/images/chair-with-empty-wall.jpg'
-import stepBook from '../assets/images/stepping-on-books.jpg'
-import twoBooks from '../assets/images/2-books.jpg'
-import coupleLibrary from '../assets/images/man-woman-read.jpg'
+import chair from '../assets/images/chair-with-empty-wall.webp'
+import stepBook from '../assets/images/stepping-on-books.webp'
+import twoBooks from '../assets/images/2-books.webp'
+import coupleLibrary from '../assets/images/man-woman-read.webp'
 import '../styles/about.css'
 
 interface AboutPageProps {

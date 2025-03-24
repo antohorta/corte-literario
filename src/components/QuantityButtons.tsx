@@ -10,22 +10,21 @@ interface QuantityButtonsProps {
 
 const QuantityButtons = (props: QuantityButtonsProps) => {
 
+    const dispatch = useDispatch();
+    const item = useSelector((state: RootType) =>
+        state.cart.items.find((item) => item.isbn === props.isbn));
+
     const handleIncrement = () => {
         if (item) {
-            dispatch(addToCart({ ...item, cantidad: item.cantidad + 1 }));
+            dispatch(addToCart({ ...item, cantidad: 1 }));
         }
     }
 
     const handleDecrement = () => {
-        if (item && item.cantidad > 1) {
-            dispatch(addToCart({ ...item, cantidad: item.cantidad - 1 }));
-        } else {
+        if (item && item.cantidad >= 1) {
             dispatch(removeFromCart(item.isbn));
         }
     }
-    const dispatch = useDispatch();
-    const item = useSelector((state: RootType) =>
-        state.cart.items.find((item) => item.isbn === props.isbn));
 
     return (
         <div className="quantity-buttons-container">

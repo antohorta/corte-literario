@@ -33,7 +33,7 @@ const BookDetailPage = (props: BookDetailPageProps) => {
                         </div>
                     </Col>
 
-                    <Col lg={5}>
+                    <Col lg={5} >
                         {books && books.map((book) => (
                             <div>
                                 <p className='detail-text'>{book.autor}</p>

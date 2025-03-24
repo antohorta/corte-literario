@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import boyAndGirlLibrary from '../assets/images/boy-and-girl-in-library.jpg'
+import boyAndGirlLibrary from '../assets/images/boy-and-girl-in-library.webp'
 import '../styles/header.css'
 
 const Header = () => {

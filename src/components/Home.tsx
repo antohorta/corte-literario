@@ -2,9 +2,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../styles/home.css'
-import mysteryBox from '../assets/images/mystery-box-home.jpg'
+import mysteryBox from '../assets/images/mystery-box-home.webp'
 import mujerLeyendo from '../assets/images/mujer-leyendo-sofa.gif'
-import amigosLibreria from '../assets/images/amigos-en-libreria.jpg'
+import amigosLibreria from '../assets/images/amigos-en-libreria.webp'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import BookSlide from './BookSlide';

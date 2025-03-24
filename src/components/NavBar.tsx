@@ -6,20 +6,26 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import '../styles/nav.css'
 import '../styles/offcanvas.css'
 import '../styles/cart.css'
-import { Link/*, useNavigate */ } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { IGenre } from '../interfaces/IGenre';
 import { useFetch } from '../hooks/useFetch';
 import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { IBook } from '../interfaces/IBook';
 import QuantityButtons from './QuantityButtons';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootType } from '../states/store';
+import { Button } from 'react-bootstrap';
+import { selectTotalItems } from "../states/cartSlice";
+import RemoveAllButton from './RemoveAllButton';
 
 const NavBar = () => {
 
-    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const cartItems = useSelector((state: RootType) => state.cart.items);
+    const totalPrice = cartItems.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
+    const totalItems = useSelector(selectTotalItems);
+
 
     /* ESTADOS DE OFFCANVAS BARRA BÚSQUEDA */
     const [showSearch, setShowSearch] = useState(false);
@@ -159,46 +165,52 @@ const NavBar = () => {
                         <Nav.Link as={Link} to={'/login'}>CUENTA</Nav.Link>
 
                         {/* CARRITO DE COMPRAS */}
-                        <Nav.Link href='#' onClick={handleShowCart}>CARRO({ })</Nav.Link>
+                        <Nav.Link href='#' onClick={handleShowCart}>CARRO({totalItems})</Nav.Link>
 
                         <Offcanvas show={showCart} onHide={handleCloseCart} placement='end' className='cart-list'>
                             <Offcanvas.Header closeButton>
-                                <Offcanvas.Title className='cart-list-title'>CARRO (0)</Offcanvas.Title>
+                                <Offcanvas.Title className='cart-list-title'>CARRO ({totalItems})</Offcanvas.Title>
                             </Offcanvas.Header>
                             <Offcanvas.Body className='cart-list-container'>
-
                                 {cartItems.length === 0 ? (
-                                    <p>Carrito vacío</p>
+                                    <div className='empty-cart-container'>
+                                        <p className='empty-cart-text'>Tu carrito está vacío</p>
+                                        <Button onClick={() => navigate('/catalogo')}>Seguir comprando</Button>
+                                    </div>
                                 ) : (
-                                    cartItems.map((book) => (
-                                        <div key={book.isbn} className='cart-list-card-container'>
-                                            <div className='cart-list-img-container'>
-                                                <img src={book.portada} alt={book.titulo} />
-                                            </div>
+                                    <div>
+                                        {cartItems.map((book) => (
+                                            <div key={book.isbn} className='cart-list-card-container'>
+                                                <div className='cart-list-img-container'>
+                                                    <img src={book.portada} alt={book.titulo} />
+                                                </div>
 
-                                            <div className='cart-list-info-container'>
-                                                <p className='titulo'>{book.titulo}</p>
-                                                <p className='autor'>{book.autor}</p>
-                                                <p className='titulo'>${book.precio.toFixed(2)}</p>
-                                            </div>
+                                                <div className='cart-list-info-container'>
+                                                    <p className='titulo'>{book.titulo}</p>
+                                                    <p className='autor'>{book.autor}</p>
+                                                    <p className='titulo'>${book.precio.toFixed(2)}</p>
+                                                </div>
 
-                                            <div className='cart-list-buttons-container'>
-                                                <button className='delete-button' onClick={() => handleRemoveItem(book.isbn)}>x</button>
-                                                <QuantityButtons isbn={book.isbn} />
+                                                <div className='cart-list-buttons-container'>
+                                                    <RemoveAllButton isbn={book.isbn} />
+                                                    <QuantityButtons isbn={book.isbn} />
+                                                </div>
                                             </div>
+                                        ))}
+
+                                        <div>
+                                            <p style={{ color: 'white' }}>Total: ${totalPrice.toLocaleString()}</p>
+                                            <p style={{ color: 'white' }}>Total de productos: {totalItems}</p>
                                         </div>
-                                    ))
+
+                                        <div className='cart-list-redirect-container'>
+                                            <button id='secondary-button'>Ver carro</button>
+                                            <button id='primary-button'>Ir a pagar</button>
+                                        </div>
+                                    </div>
                                 )}
-
-                                <div>
-                                    <p>Total: ${total.toFixed(2)}</p>
-                                </div>
-
-                                <div className='cart-list-redirect-container'>
-                                    <button id='secondary-button'>Ver carro</button>
-                                    <button id='primary-button'>Ir a pagar</button>
-                                </div>
                             </Offcanvas.Body>
+
                         </Offcanvas>
                     </Container>
                 </Navbar>
