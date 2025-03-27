@@ -1,18 +1,54 @@
+.cart-list {
+    position: relative;
+}
+
 .cart-list-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    padding-right: 0px !important;
+    padding-bottom: 8rem !important;
+
 }
 
 .cart-list.offcanvas {
     width: 40vw !important;
 }
 
+@media (max-width: 1024px) {
+    .cart-list.offcanvas {
+        width: 50vw !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-list.offcanvas {
+        width: 60vw !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-list.offcanvas {
+        width: 90vw !important;
+    }
+}
+
+
+/* LIBROS DEL CARRITO */
+
+.full-cart-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 30px;
+    padding-bottom: 4rem;/
+}
+
 .cart-list-card-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: stretch;
 }
 
 .cart-list-title {
@@ -25,34 +61,73 @@
     padding: 0.5rem !important;
 }
 
-.cart-list-img-container {
+.cart-list-img-container,
+.cart-list-img-container img {
     width: 6rem;
-    height: 9.7rem;
+    height: 8rem;
+}
+
+.cart-list-img-container {
     background-color: #858585;
     margin: 1rem 1rem;
 }
 
 .cart-list-info-container {
     width: 60%;
-    padding: 1rem 1rem;
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .cart-list-info-container .titulo,
-.cart-list-info-container .autor {
+.cart-list-info-container .autor,
+.cart-list-info-container .precio,
+.total-price {
     font-family: "Roboto Mono";
-    font-size: 0.7rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin: 0.75rem 0rem 0.3rem 0rem;
 }
 
-.cart-list-info-container .titulo {
+.cart-list-info-container .titulo,
+.total-price {
     color: #D9D9D9;
+    font-size: 0.8;
 }
 
 .cart-list-info-container .autor {
     color: #A2A2A4;
+    font-size: 0.7rem;
+}
+
+.cart-list-info-container .precio {
+    color: #D9D9D9;
+    font-size: 0.7rem;
+}
+
+.cart-list-buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+/* PRECIO TOTAL Y BOTONES DEL CARRITO */
+
+.total-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    padding: 0rem 1rem 1rem 1rem;
+    z-index: 10;
+}
+
+.total-price {
+    margin: 1rem;
 }
 
 .delete-button,
@@ -62,6 +137,56 @@
     background-color: transparent;
     color: #D9D9D9;
 }
+
+.delete-button {
+    font-family: "Roboto Mono";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0.75rem 0rem 0.3rem 0rem;
+    color: #A2A2A4;
+    font-size: 0.7rem;
+}
+
+.delete-button:hover,
+.delete-button:active {
+    text-decoration: line-through;
+}
+
+.quantity-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    border: 1px solid #A2A2A4;
+}
+
+.quantity-buttons-container span {
+    font-family: "Roboto Mono";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0.4rem;
+    color: #A2A2A4;
+    font-size: 0.7rem;
+    margin: 0rem !important;
+}
+
+.quantity-buttons-container svg {
+    padding: 0rem 0.2rem;
+}
+
+.quantity-buttons-container button {
+    border: none;
+    background-color: transparent;
+    color: #D9D9D9;
+    transition: transform 0.1s ease-in-out;
+}
+
+.quantity-buttons-container button:hover {
+    transform: scale(1.3);
+}
+
 
 .cart-list-redirect-container {
     display: flex;
@@ -123,3 +248,5 @@
     box-shadow: 0.3rem 0.3rem #D9D9D9;
     border: 2px solid #222 !important;
 }
+
+/* Scroll bar */

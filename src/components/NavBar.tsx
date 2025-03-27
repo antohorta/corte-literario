@@ -178,7 +178,7 @@ const NavBar = () => {
                                         <Button onClick={() => navigate('/catalogo')}>Seguir comprando</Button>
                                     </div>
                                 ) : (
-                                    <div>
+                                    <div className='full-cart-container'>
                                         {cartItems.map((book) => (
                                             <div key={book.isbn} className='cart-list-card-container'>
                                                 <div className='cart-list-img-container'>
@@ -188,7 +188,7 @@ const NavBar = () => {
                                                 <div className='cart-list-info-container'>
                                                     <p className='titulo'>{book.titulo}</p>
                                                     <p className='autor'>{book.autor}</p>
-                                                    <p className='titulo'>${book.precio.toFixed(2)}</p>
+                                                    <p className='precio'>${book.precio.toLocaleString()}</p>
                                                 </div>
 
                                                 <div className='cart-list-buttons-container'>
@@ -197,15 +197,15 @@ const NavBar = () => {
                                                 </div>
                                             </div>
                                         ))}
+                                        <div className='total-container'>
+                                            <div>
+                                                <p className='total-price'>Total: ${totalPrice.toLocaleString()}</p>
+                                            </div>
 
-                                        <div>
-                                            <p style={{ color: 'white' }}>Total: ${totalPrice.toLocaleString()}</p>
-                                            <p style={{ color: 'white' }}>Total de productos: {totalItems}</p>
-                                        </div>
-
-                                        <div className='cart-list-redirect-container'>
-                                            <button id='secondary-button'>Ver carro</button>
-                                            <button id='primary-button'>Ir a pagar</button>
+                                            <div className='cart-list-redirect-container'>
+                                                <button id='secondary-button'>Ver carro</button>
+                                                <button id='primary-button'>Ir a pagar</button>
+                                            </div>
                                         </div>
                                     </div>
                                 )}

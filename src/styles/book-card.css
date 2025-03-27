@@ -20,7 +20,7 @@
 }
 
 .card-img-container,
-.card-img-container .img {
+.card-img-container img {
     width: 13rem;
     height: 17.4rem;
     overflow: hidden;

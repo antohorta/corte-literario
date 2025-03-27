@@ -17,9 +17,9 @@ const cartSlice = createSlice({
         addToCart: (state: CartState, action: PayloadAction<ICart>) => {
             const existingItem = state.items.find(item => item.isbn === action.payload.isbn);
             if (existingItem) {
-                existingItem.cantidad += 1;
+                existingItem.cantidad += action.payload.cantidad;
             } else {
-                state.items.push({ ...action.payload, cantidad: 1 });
+                state.items.push({ ...action.payload, cantidad: action.payload.cantidad });
             }
         },
         removeFromCart: (state: CartState, action: PayloadAction<string>) => {
@@ -41,7 +41,7 @@ const cartSlice = createSlice({
     },
 })
 
-// Selector para obtener la cantidad total de productos en el carrito
+// SELECTOR PARA OBTENER CANTIDAD TOTAL DE PRODUCTOS DEL CARRO
 export const selectTotalItems = (state: RootState) =>
     state.cart.items.reduce((total: number, item: ICart) => total + (item.cantidad ?? 0), 0);
 

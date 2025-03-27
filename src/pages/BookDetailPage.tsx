@@ -7,6 +7,7 @@ import { IBook } from '../interfaces/IBook';
 import { useParams } from 'react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
 import '../styles/detail.css'
+import AddToCartInput from '../components/AddCartInput';
 
 interface BookDetailPageProps {
     title: string;
@@ -25,12 +26,14 @@ const BookDetailPage = (props: BookDetailPageProps) => {
 
     return (
         <MainLayout>
-            <Container>
+            <Container className='detail-page-container'>
                 <Row>
                     <Col lg={6}>
-                        <div className=''>
-                            <img src="" alt="" />
-                        </div>
+                        {books && books.map((book) => (
+                            <div className='detail-img-container'>
+                                <img src={book.portada} alt={book.titulo} />
+                            </div>
+                        ))}
                     </Col>
 
                     <Col lg={5} >
@@ -39,8 +42,7 @@ const BookDetailPage = (props: BookDetailPageProps) => {
                                 <p className='detail-text'>{book.autor}</p>
                                 <p className='detail-title'>{book.titulo}</p>
                                 <p className='detail-text'>{`$${book.precio.toLocaleString()}`}</p>
-                                <button className='detail-button'>Añadir al carro</button>
-
+                                <AddToCartInput item={book}></AddToCartInput>
                                 <Accordion defaultActiveKey="0" flush alwaysOpen className='detail-accordion'>
                                     <Accordion.Item eventKey="0">
                                         <Accordion.Header>Resumen</Accordion.Header>

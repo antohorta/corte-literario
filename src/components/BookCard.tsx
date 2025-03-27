@@ -16,13 +16,16 @@ const BookCard = (props: BookCardProps) => {
 
     const handleAddToCart = (e: React.MouseEvent) => {
         e.preventDefault();
-        dispatch(addToCart(props.book));
+        dispatch(addToCart({ ...props.book, cantidad: 1 }));
     };
+
+    console.log(`la ruta de la imagen es: ${props.book.portada}`)
 
     return (
         <div className={`card-container ${props.noStock ? 'no-stock' : ''}`}>
             <Link to={`/libro/${props.book.isbn}`}>
                 <div className='card-img-container'>
+                    <img className='card-img' src={props.book.portada} alt={props.book.titulo} />
                     <button
                         className={`add-cart-button ${props.noStock ? 'hidden' : ''}`}
                         disabled={props.noStock}
