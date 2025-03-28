@@ -4,15 +4,17 @@ import Col from 'react-bootstrap/Col';
 import MainLayout from "../layout/MainLayout"
 import '../styles/catalog.css'
 import '../styles/offcanvas.css'
+import '../styles/pagination.css'
 import { useFetch } from '../hooks/useFetch';
-import { IBook } from '../interfaces/IBook';
 import BookCard from '../components/BookCard';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { IGenre } from '../interfaces/IGenre';
 import { NavDropdown } from 'react-bootstrap';
 import { IEditorial } from '../interfaces/IEditorial';
+import Pagination from 'react-bootstrap/Pagination';
+import { IPaginatedBooks } from '../interfaces/IPaginatedBooks';
 
 interface CatalogPageProps {
     title: string;
@@ -27,8 +29,22 @@ const CatalogPage = (props: CatalogPageProps) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    /* ESTADO PAGINACIÓN */
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 5;
+    const [totalPages, setTotalPages] = useState(1);
+
+    const url = `http://localhost:3000/libros?_page=${currentPage}&_per_page=${itemsPerPage}`;
+
     /* LLAMADA PARA OBTENER LIBROS */
-    const { data: books, loading: loadingBooks, error: errorBook } = useFetch<IBook[]>('http://localhost:3000/libros');
+    const { data: books, loading: loadingBooks, error: errorBook } = useFetch<IPaginatedBooks>(url);
+
+    /* LLAMADA PARA EXTRAER PÁGINAS TOTALES */
+    useEffect(() => {
+        if (books) {
+            setTotalPages(books.pages);
+        }
+    }, [books]);
 
     /* LLAMADA PARA OBTENER GÉNEROS */
     const { data: genres, loading: loadingGenres, error: errorGenres } = useFetch<IGenre[]>('http://localhost:3000/generos');
@@ -45,6 +61,42 @@ const CatalogPage = (props: CatalogPageProps) => {
     if (errorBook) return <p>Error en la consulta de datos {errorBook}</p>
     if (errorGenres) return <p>Error en la consulta de datos {errorGenres}</p>
     if (errorEditorials) return <p>Error en la consulta de datos {errorGenres}</p>
+
+    /* HANDLES PAGINACIÓN */
+
+    const paginationItems = [];
+
+    const handlePageChange = (pageNumber: number) => {
+        setCurrentPage(pageNumber);
+    }
+
+    const handleFirstPage = () => {
+        setCurrentPage(1);
+    };
+
+    const handlePrevPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    const handleNextPage = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const handleLastPage = () => {
+        setCurrentPage(totalPages);
+    };
+
+    for (let number = 1; number <= totalPages; number++) {
+        paginationItems.push(
+            <Pagination.Item key={number} active={number === currentPage} onClick={() => handlePageChange(number)}>
+                {number}
+            </Pagination.Item>
+        );
+    }
 
     return (
         <MainLayout>
@@ -67,9 +119,11 @@ const CatalogPage = (props: CatalogPageProps) => {
                     </Col>
                 </Row>
 
+                {/* LIBROS */}
+
                 <Row>
                     <Col lg={12} className='catalog-cards-container'>
-                        {books && books.map((book) => (
+                        {books?.data && books.data.map((book) => (
                             <BookCard
                                 key={book.isbn}
                                 book={book}
@@ -77,6 +131,31 @@ const CatalogPage = (props: CatalogPageProps) => {
                         ))}
                     </Col>
                 </Row>
+
+                {/* PAGINACIÓN */}
+
+                {books && books.data ? (<Pagination>
+                    <Pagination.First
+                        onClick={handleFirstPage}
+                        disabled={currentPage === 1}
+                        className={currentPage === 1 ? 'pagination-disabled' : ''} />
+                    <Pagination.Prev
+                        onClick={handlePrevPage}
+                        disabled={currentPage === 1}
+                        className={currentPage === 1 ? 'pagination-disabled' : ''} />
+                    {paginationItems}
+                    <Pagination.Next
+                        onClick={handleNextPage}
+                        disabled={currentPage === totalPages}
+                        className={currentPage === totalPages ? 'pagination-disabled' : ''} />
+                    <Pagination.Last
+                        onClick={handleLastPage}
+                        disabled={currentPage === totalPages}
+                        className={currentPage === totalPages ? 'pagination-disabled' : ''} />
+                </Pagination>)
+                    : null}
+
+                {/* FILTROS */}
 
                 <Offcanvas show={show} onHide={handleClose}>
                     <Offcanvas.Header closeButton>

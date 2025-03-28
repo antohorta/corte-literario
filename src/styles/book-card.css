@@ -64,9 +64,9 @@
     width: 100%;
     padding: 8px 12px 8px 12px;
     border-radius: 0px;
-    background-color: #D9D9D9;
-    border: 2px solid #222;
-    color: #222;
+    background-color: #222;
+    border: 2px solid #D9D9D9;
+    color: #D9D9D9;
     font-family: "Roboto Mono";
     font-size: 0.9rem;
     font-style: normal;
@@ -88,9 +88,9 @@
 }
 
 .add-cart-button:active {
-    background-color: #222 !important;
-    color: #D9D9D9 !important;
-    border: 2px solid #D9D9D9 !important;
+    background-color: #D9D9D9 !important;
+    color: #222 !important;
+    border: 2px solid #222 !important;
 }
 
 /* SIN STOCK */

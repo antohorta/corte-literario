@@ -132,11 +132,11 @@ const NavBar = () => {
                                 {/* RESULTADOS BÚSQUEDA */}
                                 <div className='results-container'>
                                     {results && results.length > 0 && (
-                                        <div className='card-result-container'>
+                                        <div className='card-results-container'>
                                             {results.map((book) => (
-                                                <div key={book.isbn} style={{ color: 'white' }}>
+                                                <div key={book.isbn} className='card-result-container'>
                                                     <div className='card-result-img-container'>
-                                                        <img src="" alt="" />
+                                                        <img src={book.portada} alt={book.titulo} />
                                                     </div>
                                                     <div className='card-result-info-container'>
                                                         <p className='titulo'>{book.titulo}</p>

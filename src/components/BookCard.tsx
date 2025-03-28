@@ -19,8 +19,6 @@ const BookCard = (props: BookCardProps) => {
         dispatch(addToCart({ ...props.book, cantidad: 1 }));
     };
 
-    console.log(`la ruta de la imagen es: ${props.book.portada}`)
-
     return (
         <div className={`card-container ${props.noStock ? 'no-stock' : ''}`}>
             <Link to={`/libro/${props.book.isbn}`}>

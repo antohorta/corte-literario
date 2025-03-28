@@ -127,6 +127,11 @@
     margin: 0.5rem;
 }
 
+.card-result-img-container img {
+    width: 8rem;
+    height: 10.7rem;
+}
+
 .card-result-info-container .titulo,
 .card-result-info-container .autor {
     font-family: "Roboto Mono";
