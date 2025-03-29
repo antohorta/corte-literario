@@ -31,8 +31,10 @@ const CatalogPage = (props: CatalogPageProps) => {
 
     /* ESTADO PAGINACIÓN */
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 5;
+    const itemsPerPage = 40;
     const [totalPages, setTotalPages] = useState(1);
+
+/*     http://localhost:3000/libros?genero=Diseño&_page=${currentPage}&_per_page=${itemsPerPage}`; */
 
     const url = `http://localhost:3000/libros?_page=${currentPage}&_per_page=${itemsPerPage}`;
 

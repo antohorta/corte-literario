@@ -129,20 +129,23 @@ const NavBar = () => {
                                             value={query} />
                                     </Form.Group>
                                 </Form>
+
                                 {/* RESULTADOS BÚSQUEDA */}
                                 <div className='results-container'>
                                     {results && results.length > 0 && (
                                         <div className='card-results-container'>
                                             {results.map((book) => (
                                                 <div key={book.isbn} className='card-result-container'>
-                                                    <div className='card-result-img-container'>
-                                                        <img src={book.portada} alt={book.titulo} />
-                                                    </div>
-                                                    <div className='card-result-info-container'>
-                                                        <p className='titulo'>{book.titulo}</p>
-                                                        <p className='autor'>{book.autor}</p>
-                                                        <p className='titulo'>{`$${book.precio.toLocaleString()}`}</p>
-                                                    </div>
+                                                    <Link to={`/libro/${book.isbn}`} id='card-result-link'>
+                                                        <div className='card-result-img-container'>
+                                                            <img src={book.portada} alt={book.titulo} />
+                                                        </div>
+                                                        <div className='card-result-info-container'>
+                                                            <p className='titulo'>{book.titulo}</p>
+                                                            <p className='autor'>{book.autor}</p>
+                                                            <p className='titulo'>{`$${book.precio.toLocaleString()}`}</p>
+                                                        </div>
+                                                    </Link>
                                                 </div>
                                             ))}
                                         </div>
@@ -153,9 +156,6 @@ const NavBar = () => {
                                     <div className='all-results-container'>
                                         <a href='#' id='all-results-link'>
                                             Ver todos los resultados
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path d="M11.25 12.75V21.75H12.75V12.75H21.75V11.25H12.75V2.25L11.25 2.25V11.25H2.25V12.75H11.25Z" fill="#D9D9D9" />
-                                            </svg>
                                         </a>
                                     </div>
                                 </div>

@@ -178,6 +178,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     border: none !important;
+    vertical-align: 0rem !important;
 }
 
 /* CERRADO (+) */

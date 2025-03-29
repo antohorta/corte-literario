@@ -180,7 +180,7 @@
             "paginas": 208,
             "precio": 14990,
             "stock": 10,
-            "genero": "Fantasía",
+            "genero": "Cuento",
             "editorial": "Debols!llo",
             "idioma": "Español",
             "encuadernacion": "Tapa blanda",
@@ -246,6 +246,177 @@
             "dimensiones": "11 x 18 cm",
             "calificacion": 0,
             "novedad": false
+        },
+        {
+            "isbn": "9783836596664",
+            "titulo": "André Butzer",
+            "autor": "André Butzer",
+            "portada": "/images/andre-bustzer.webp",
+            "resumen": "Al fusionar el expresionismo europeo con la cultura popular estadounidense, André Butzer comenzó a dar forma a una obra que transita por los extremos artísticos y políticos del siglo XX.",
+            "paginas": 432,
+            "precio": 114800,
+            "stock": 10,
+            "genero": "Arte",
+            "editorial": "Taschen",
+            "idioma": "Inglés",
+            "encuadernacion": "Tapa dura",
+            "publicacion": 2022,
+            "descuento": 15,
+            "dimensiones": "25 x 33,4 cm",
+            "calificacion": 0,
+            "novedad": false
+        },
+        {
+            "isbn": "9788418395222",
+            "titulo": "El príncipe",
+            "autor": "Maquiavelo",
+            "portada": "/images/el-principe.webp",
+            "resumen": "Quería instruir sobre los mecanismos de gobierno y avisar contra las estrategias de los tiranos, aunque sus consejos fueron a menudo malinterpretados, como muestra el uso que todavía hoy damos al término «maquiavélico».El príncipe es un texto de referencia que defiende ideas tan actuales como «pesa más lo que percibe el ciudadano que la realidad a la que se enfrenta». En tiempos de «posverdad», nada más útil que su lectura.",
+            "paginas": 192,
+            "precio": 14900,
+            "stock": 10,
+            "genero": "Histórico",
+            "editorial": "Alma",
+            "idioma": "Español",
+            "encuadernacion": "Tapa dura",
+            "publicacion": 2019,
+            "descuento": 15,
+            "dimensiones": "15,5 x 23 cm",
+            "calificacion": 0,
+            "novedad": false
+        },
+        {
+            "isbn": "9783836585903",
+            "titulo": "The Gourmand's Lemon. A Collection of Stories and Recipes",
+            "autor": "The Gourmand",
+            "portada": "/images/limon.webp",
+            "resumen": "El limón ocupa un lugar central en el segundo volumen de la colaboración entre Taschen y The Gourmand, una revista que fusiona comida y arte. Esta fruta, protagonista histórica, ha sido símbolo de los jardines renacentistas, protector del escorbuto, inspiración literaria para autores como Didion y Fitzgerald, y musa de artistas como Picasso y Warhol. También se vincula con el diseño a través de piezas como el Juicy Salif de Philippe Starck. El libro incluye un prólogo del chef Simon Hopkinson, una introducción de Jennifer Higgie y más de 60 recetas internacionales con limón, fotografiadas por Bobby Doherty.",
+            "paginas": 272,
+            "precio": 61800,
+            "stock": 10,
+            "genero": "Cocina",
+            "editorial": "Taschen",
+            "idioma": "Inglés",
+            "encuadernacion": "Tapa dura",
+            "publicacion": 2024,
+            "descuento": 15,
+            "dimensiones": "20 x 27,9 cm",
+            "calificacion": 0,
+            "novedad": false
+        },
+        {
+            "isbn": "9789566289128",
+            "titulo": "Recetas para gente sin tiempo",
+            "autor": "Don Tinto (Alvaro Peralta)",
+            "portada": "/images/recetas-gente-sin-tiempo.webp",
+            "resumen": "Hoy en día son pocos los que cocinan en sus casas. Y de esos, los que lo hacen a diario son mucho menos. Álvaro Peralta, conocido por su seudónimo de Don Tinto, quiere ayudar a los que llegan agotados a sus casas tras largas jornadas o traslados interminables y no tienen tiempo ni ganas de cocinar. Este libro entrega recetas fáciles y rápidas para para hombres separados que tienen a sus niños un par de días a la semana y también para mujeres que viven solas con sus hijos o a cualquiera (solitario o en familia) que ya no sepa que hacer a la hora de la comida o para las colaciones. El 'menú' incluye recetas para salir de forma ágil al paso a la hora de almorzar o comer, indicaciones sobre cómo guardar muchas de estas preparaciones (incluso congelar) y, además, indicar cuáles resultan más convenientes y prácticas a la hora de transportar para un almuerzo en el trabajo, el colegio o la universidad.",
+            "paginas": 168,
+            "precio": 15000,
+            "stock": 10,
+            "genero": "Cocina",
+            "editorial": "Aguilar",
+            "idioma": "Español",
+            "encuadernacion": "Tapa blanda",
+            "publicacion": 2024,
+            "descuento": 15,
+            "dimensiones": "15,5 x 23 cm",
+            "calificacion": 0,
+            "novedad": false
+        },
+        {
+            "isbn": "9788412577730",
+            "titulo": "El regalo",
+            "autor": "Zoe Maeve",
+            "portada": "/images/el-regalo.webp",
+            "resumen": "Villa de los Zares, Rusia, 1901... Revoloteando sobre los terrenos nevados del Palacio de Alejandro, una polilla presencia el nacimiento de la cuarta princesa Románov: Anastasia. Sus hermanas y ella crecen en una jaula de oro, aisladas de la sociedad que vive más allá de los muros del palacio a pesar de su dominio sobre ella. Tras recibir de forma misteriosa una cámara como regalo por su decimoquinto cumpleaños, empieza a documentar la realidad que la rodea, pero el regalo trae consigo una carga que aún no es capaz de comprender. Una criatura se mueve por los márgenes de su mirada y la acecha en sueños. A medida que la revolución avanza, las esquinas del mundo de Anastasia se van estrechando. Algo la persigue, una fuerza implacable.",
+            "paginas": 96,
+            "precio": 26700,
+            "stock": 10,
+            "genero": "Terror",
+            "editorial": "Alpha Decay",
+            "idioma": "Español",
+            "encuadernacion": "Tapa blanda",
+            "publicacion": 2022,
+            "descuento": 15,
+            "dimensiones": "17 x 21,8 cm",
+            "calificacion": 0,
+            "novedad": false
+        },
+        {
+            "isbn": "9788831321396",
+            "titulo": "Foucault en California. Un viaje filosófico y lisérgico",
+            "autor": "Simeon Wade",
+            "portada": "/images/foucault.webp",
+            "resumen": "Este libro es la historia de la «experiencia más importante» de la vida de Michel Foucault, narrada por quienes lo guiaron a través de una noche que muchos consideraron legendaria y que supuso a Foucault una revolución personal. Un viaje que cambió para siempre al pensador francés, tanto que lo empujó a reescribir su obra maestra, Historia de la sexualidad. Después de treinta años dentro de una caja, el testimonio de esa experiencia mística ha tomado forma, convirtiéndose en un libro. Entre sesiones de yoga, reflexiones sobre la naturaleza humana, confesiones y visiones, Foucault en California es una crónica de caminos, diálogo filosófico y relato de mayoría de edad queer. Un viaje vertiginoso y extravagante, que demuestra cómo se pueden tomar los más variados caminos para llegar a la Verdad. Un viaje alucinante.",
+            "paginas": 160,
+            "precio": 16000,
+            "stock": 10,
+            "genero": "Filosofía",
+            "editorial": "Blackie Books",
+            "idioma": "Español",
+            "encuadernacion": "Tapa dura",
+            "publicacion": 2024,
+            "descuento": 15,
+            "dimensiones": "14 x 21 cm",
+            "calificacion": 0,
+            "novedad": false
+        },
+        {
+            "isbn": "9788491813095",
+            "titulo": "Kant: Entre la Moral y la Política",
+            "autor": "Roberto Rodríguez Aramayo",
+            "portada": "/images/kant.webp",
+            "resumen": "Reivindicación del pensamiento de Kant (1724-1804), este libro lo rescata del tópico que lo etiqueta como un metafísico trasnochado cuya obra es compleja e inaccesible. Roberto R. Aramayo muestra en estas páginas que Kant se propuso más bien simplificar los problemas con que aún hoy continuamos confrontándonos y buscó sencillas fórmulas para orientar nuestras reglas de convivencia más elementales, porque ante todo quiso moralizar la política y defender los derechos humanos, apostando por el primado de lo práctico y el principio de autonomía en todos los ámbitos. No es casual que autores como Arendt o Cassirer hayan recurrido a la filosofía kantiana en tiempos sombríos, para luchar desde la historia de las ideas contra la banalización del mal y el totalitarismo, porque cualquier servidumbre voluntaria, como la que alienta el pésimo uso de las nuevas tecnologías, resulta incompatible con la divisa kantiana del pensar por cuenta propia.",
+            "paginas": 312,
+            "precio": 18000,
+            "stock": 10,
+            "genero": "Filosofía",
+            "editorial": "Alianza Editorial",
+            "idioma": "Español",
+            "encuadernacion": "Tapa blanda",
+            "publicacion": 2018,
+            "descuento": 15,
+            "dimensiones": "18 x 12 cm",
+            "calificacion": 0,
+            "novedad": false
+        },
+        {
+            "isbn": "9788412236576",
+            "titulo": "La Tiranía de las Moscas",
+            "autor": "Elaine Vilar Madruga",
+            "portada": "/images/tirania.webp",
+            "resumen": "«Ojalá hubiera caído en mis manos, siendo chavala, un libro como este, en el que se invita a los hijos a rebelarse contra sus padres, y no en un sentido metafórico. (?) En La tiranía de las moscas ni la mamá mima ni el papá posa con los hermanitos y un selecto en lo alto. En La tiranía de las moscas la hermana mayor es una shakesperiana heroína llamada Casandra cuya epopeya consiste en la autodeterminación de su sexualidad contra el reaccionarismo tiránico por parte de su padre y patologizante por parte de su madre», Cristina Morales en el prólogo.",
+            "paginas": 304,
+            "precio": 28600,
+            "stock": 10,
+            "genero": "Ficción",
+            "editorial": "Editorial Barrett Sociedad Cooperativa Andaluza",
+            "idioma": "Español",
+            "encuadernacion": "Tapa blanda",
+            "publicacion": 2021,
+            "descuento": 15,
+            "dimensiones": "21 x 14 cm",
+            "calificacion": 0,
+            "novedad": false
+        },
+        {
+            "isbn": "9789569673344",
+            "titulo": "El lagarto negro",
+            "autor": "Edogawa Ranpo",
+            "portada": "/images/el-lagarto-negro.webp",
+            "resumen": "«Edogawa Ranpo, ícono de la novela policíaca japonesa, nos sumerge en una historia cargada de humor negro y persecusiones imposibles: una encarnizada batalla en la que Kogor Akechi, el detective más famoso de Japón, tendrá que enfrentarse a su archienemiga, la femme fatale por excelencia de la literatura japonesa, el Lagarto Negro. La trama gira en torno a esta camaleónica ladrona, líder de una banda de maleantes que busca apoderarse de los objetos más bellos del mundo. Pero su afán por las joyas y diamantes pronto es superado por una nueva obsesión: secuestrar seres humanos hermosos. Sin embargo, en su camino se cruza con Kogor Akechi, el único capaz de anticiparse a sus movimientos. Ambos se verán envueltos en un juego de seducción en donde la verdadera recompensa es superar la astucia del otro.El Lagarto Negro fue publicada por entregas, con un capítulo al mes, a lo largo de 1934, y se convirtió rápidamente en una de las obras más aclamadas de Edogawa Ranpo. Yukio Mishima, confeso admirador de la obra, la adaptó al teatro y luego al cine en 1968 bajo el título Black Lizard, dirigida por Kinji Fukasaku. También ha sido adaptada a la televisión y al manga.",
+            "paginas": 302,
+            "precio": 20000,
+            "stock": 10,
+            "genero": "Ficción",
+            "editorial": "Abducción",
+            "idioma": "Español",
+            "encuadernacion": "Tapa blanda",
+            "publicacion": 2024,
+            "descuento": 15,
+            "dimensiones": "18cm x 12,5cm",
+            "calificacion": 0,
+            "novedad": false
         }
     ],
     "generos": [
@@ -259,63 +430,55 @@
         },
         {
             "id": 3,
-            "genero": "Aventura"
-        },
-        {
-            "id": 4,
             "genero": "Biografía"
         },
         {
-            "id": 5,
+            "id": 4,
             "genero": "Ciencia Ficción"
         },
         {
+            "id": 5,
+            "genero": "Cocina"
+        },
+        {
             "id": 6,
-            "genero": "Diseño"
+            "genero": "Cuento"
         },
         {
             "id": 7,
-            "genero": "Ensayo"
+            "genero": "Diseño"
         },
         {
             "id": 8,
-            "genero": "Fantasía"
-        },
-        {
-            "id": 9,
-            "genero": "Ficción"
+            "genero": "Ensayo"
         },
         {
             "id": 10,
-            "genero": "Fotografía"
+            "genero": "Ficción"
+        },
+        {
+            "id": 9,
+            "genero": "Filosofía"
         },
         {
             "id": 11,
-            "genero": "Histórico"
+            "genero": "Fotografía"
         },
         {
             "id": 12,
-            "genero": "Misterio"
+            "genero": "Histórico"
         },
         {
             "id": 13,
-            "genero": "No Ficción"
+            "genero": "Misterio"
         },
         {
             "id": 14,
             "genero": "Poesía"
         },
         {
-            "id": 15,
-            "genero": "Romance"
-        },
-        {
             "id": 16,
             "genero": "Terror"
-        },
-        {
-            "id": 17,
-            "genero": "Teatro"
         }
     ],
     "editoriales": [
@@ -336,7 +499,7 @@
             "editorial": "FCE"
         },
         {
-            "id":24,
+            "id": 24,
             "editorial": "Alma"
         },
         {
