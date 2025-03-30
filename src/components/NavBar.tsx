@@ -13,19 +13,20 @@ import React, { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { IBook } from '../interfaces/IBook';
 import QuantityButtons from './QuantityButtons';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootType } from '../states/store';
 import { Button } from 'react-bootstrap';
 import { selectTotalItems } from "../states/cartSlice";
 import RemoveAllButton from './RemoveAllButton';
+import { setGenre as setGenreRedux } from '../states/genreSlice';
 
 const NavBar = () => {
 
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const cartItems = useSelector((state: RootType) => state.cart.items);
     const totalPrice = cartItems.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
     const totalItems = useSelector(selectTotalItems);
-
 
     /* ESTADOS DE OFFCANVAS BARRA BÚSQUEDA */
     const [showSearch, setShowSearch] = useState(false);
@@ -42,11 +43,6 @@ const NavBar = () => {
     /* OBTENER RESULTADOS BÚSQUEDA */
     const { data: results, loading: loadingResults, error: errorResults } = useFetch<IBook[]>(`http://localhost:3000/libros?q=${query}`)
 
-    /* HANDLE PARA EVITAR QUE DROPDOWN SE CIERRE */
-    const handleNoPropagation = (e: React.MouseEvent) => {
-        e.stopPropagation();
-    };
-
     /* HANDLES DE OFFCANVAS BARRA BÚSQUEDA */
     const handleCloseSearch = () => setShowSearch(false);
     const handleShowSearch = () => setShowSearch(true);
@@ -59,6 +55,13 @@ const NavBar = () => {
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setQuery(e.target.value);
     }
+
+    /* HANDLE PARA FILTRO DE + EVITAR QUE DROPDOWN SE CIERRE */
+    const handleGenreClick = (e: React.MouseEvent, genre: string) => {
+        e.stopPropagation();
+        dispatch(setGenreRedux(genre));
+        navigate(`/catalogo`);
+    };
 
     useEffect(() => {
         if (!query) {
@@ -97,12 +100,11 @@ const NavBar = () => {
                                         title="GÉNEROS"
                                         id={`offcanvasNavbarDropdown-expand-${expand}`}>
 
-                                        {/* PINTAR GÉNEROS */}
+                                        {/* GÉNEROS */}
                                         {genres && genres.map((genero) => (
                                             <NavDropdown.Item
                                                 key={genero.id}
-                                                href={`#${genero.id}`}
-                                                onClick={handleNoPropagation}>
+                                                onClick={(e: React.MouseEvent) => handleGenreClick(e, genero.genero)}>
                                                 {genero.genero}
                                             </NavDropdown.Item>
                                         ))}

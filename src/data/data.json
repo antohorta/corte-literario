@@ -390,7 +390,7 @@
             "precio": 28600,
             "stock": 10,
             "genero": "Ficción",
-            "editorial": "Editorial Barrett Sociedad Cooperativa Andaluza",
+            "editorial": "Editorial Barrett",
             "idioma": "Español",
             "encuadernacion": "Tapa blanda",
             "publicacion": 2021,
@@ -491,11 +491,11 @@
             "genero": "Ensayo"
         },
         {
-            "id": 10,
+            "id": 9,
             "genero": "Ficción"
         },
         {
-            "id": 9,
+            "id": 10,
             "genero": "Filosofía"
         },
         {
@@ -508,57 +508,81 @@
         },
         {
             "id": 13,
-            "genero": "Misterio"
-        },
-        {
-            "id": 14,
             "genero": "Poesía"
         },
         {
-            "id": 16,
+            "id": 14,
             "genero": "Terror"
         }
     ],
     "editoriales": [
         {
             "id": 20,
-            "editorial": "Phaidon"
+            "editorial": "Abducción"
         },
         {
             "id": 21,
-            "editorial": "Gustavo Gili"
+            "editorial": "Alianza Editorial"
         },
         {
             "id": 22,
-            "editorial": "Anagrama"
-        },
-        {
-            "id": 23,
-            "editorial": "FCE"
-        },
-        {
-            "id": 24,
             "editorial": "Alma"
         },
         {
+            "id": 23,
+            "editorial": "Alpha Decay"
+        },
+        {
+            "id": 24,
+            "editorial": "Aguilar"
+        },
+        {
             "id": 25,
-            "editorial": "Minotauro"
+            "editorial": "Anagrama"
         },
         {
             "id": 26,
-            "editorial": "Taschen"
+            "editorial": "Blackie Books"
         },
         {
             "id": 27,
-            "editorial": "..."
+            "editorial": "Debate"
         },
         {
             "id": 28,
-            "editorial": "..."
+            "editorial": "Editorial Barrett"
         },
         {
             "id": 29,
-            "editorial": "..."
+            "editorial": "FCE"
+        },
+        {
+            "id": 30,
+            "editorial": "Gustavo Gili"
+        },
+        {
+            "id": 31,
+            "editorial": "Literatura Random House"
+        },
+        {
+            "id": 32,
+            "editorial": "Minotauro"
+        },
+        {
+            "id": 33,
+            "editorial": "Phaidon"
+        },
+        {
+            "id": 34,
+            "editorial": "Seix Barral"
+        },
+        {
+            "id": 35,
+            "editorial": "Siruela"
+        },
+        {
+            "id": 36,
+            "editorial": "Taschen"
         }
     ]
 }

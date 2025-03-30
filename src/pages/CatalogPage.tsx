@@ -15,6 +15,8 @@ import { NavDropdown } from 'react-bootstrap';
 import { IEditorial } from '../interfaces/IEditorial';
 import Pagination from 'react-bootstrap/Pagination';
 import { IPaginatedBooks } from '../interfaces/IPaginatedBooks';
+import { useSelector } from "react-redux";
+import { RootType } from "../states/store";
 
 interface CatalogPageProps {
     title: string;
@@ -29,14 +31,17 @@ const CatalogPage = (props: CatalogPageProps) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    /* GÉNERO SELECCIONADO EN NAVBAR */
+    const selectedGenre = useSelector((state: RootType) => state.genre.selectedGenre);
+
     /* ESTADO PAGINACIÓN */
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 12;
     const [totalPages, setTotalPages] = useState(1);
 
-/*     http://localhost:3000/libros?genero=Diseño&_page=${currentPage}&_per_page=${itemsPerPage}`; */
-
-    const url = `http://localhost:3000/libros?_page=${currentPage}&_per_page=${itemsPerPage}`;
+    const url = selectedGenre
+        ? `http://localhost:3000/libros?genero=${selectedGenre}&_page=${currentPage}&_per_page=${itemsPerPage}`
+        : `http://localhost:3000/libros?_page=${currentPage}&_per_page=${itemsPerPage}`;
 
     /* LLAMADA PARA OBTENER LIBROS */
     const { data: books, loading: loadingBooks, error: errorBook } = useFetch<IPaginatedBooks>(url);
