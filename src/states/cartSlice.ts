@@ -6,9 +6,20 @@ interface CartState {
     items: ICart[];
 }
 
-const initialState: CartState = {
-    items: [],
+const getInitialState = (): CartState => {
+    const savedCart = localStorage.getItem('redux_cart');
+    if (savedCart) {
+        try {
+            return JSON.parse(savedCart);
+        } catch (error) {
+            console.error("Error parsing cart data from localStorage", error);
+            localStorage.removeItem('redux_cart'); // Limpia datos corruptos
+        }
+    }
+    return { items: [] };
 };
+
+const initialState: CartState = getInitialState();
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -21,6 +32,7 @@ const cartSlice = createSlice({
             } else {
                 state.items.push({ ...action.payload, cantidad: action.payload.cantidad });
             }
+
         },
         removeFromCart: (state: CartState, action: PayloadAction<string>) => {
             const index = state.items.findIndex(item => item.isbn === action.payload);
@@ -31,9 +43,11 @@ const cartSlice = createSlice({
                     state.items.splice(index, 1);
                 }
             }
+
         },
         removeAllFromCart: (state: CartState, action: PayloadAction<string>) => {
             state.items = state.items.filter(item => item.isbn !== action.payload);
+
         },
         clearCart: (state: CartState) => {
             state.items = [];
@@ -41,7 +55,7 @@ const cartSlice = createSlice({
     },
 })
 
-// SELECTOR PARA OBTENER CANTIDAD TOTAL DE PRODUCTOS DEL CARRO
+// PARA OBTENER CANTIDAD TOTAL DE PRODUCTOS DEL CARRO
 export const selectTotalItems = (state: RootState) =>
     state.cart.items.reduce((total: number, item: ICart) => total + (item.cantidad ?? 0), 0);
 

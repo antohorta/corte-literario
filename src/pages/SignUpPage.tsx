@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import MainLayout from "../layout/MainLayout"
 import '../styles/login.css'
 
@@ -21,21 +22,21 @@ const SignUpPage = (props: SignUpPageProps) => {
                         <h2 className='login-title'>Crear cuenta</h2>
                         <Form className='login-form'>
 
-                            <Form.Group className="mb-5 mt-5" controlId="formBasicPassword">
-                                <Form.Control type="password" placeholder="Nombre" />
-                            </Form.Group>
+                            <FloatingLabel className="mb-5 mt-5" controlId="nombre" label="Nombre">
+                                <Form.Control type="text" placeholder="Nombre" />
+                            </FloatingLabel>
 
-                            <Form.Group className="mb-5 mt-5" controlId="formBasicPassword">
-                                <Form.Control type="password" placeholder="Apellido" />
-                            </Form.Group>
+                            <FloatingLabel className="mb-5 mt-5" controlId="apellido" label="Apellido">
+                                <Form.Control type="text" placeholder="Apellido" />
+                            </FloatingLabel>
 
-                            <Form.Group className="mb-5 mt-5" controlId="formBasicEmail">
+                            <FloatingLabel className="mb-5 mt-5" controlId="correo" label="Correo electrónico">
                                 <Form.Control type="email" placeholder="Correo electrónico" />
-                            </Form.Group>
+                            </FloatingLabel>
 
-                            <Form.Group className="mb-5 mt-5" controlId="formBasicPassword">
+                            <FloatingLabel className="mb-5 mt-5" controlId="contrasena" label="Contraseña">
                                 <Form.Control type="password" placeholder="Contraseña" />
-                            </Form.Group>
+                            </FloatingLabel>
 
                             <Button variant="primary" type="submit">
                                 Crear cuenta

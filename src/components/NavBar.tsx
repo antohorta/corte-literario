@@ -77,8 +77,8 @@ const NavBar = () => {
 
     return (
         <div className='my-nav-container'>
-            {[false].map((expand) => (
-                <Navbar key={expand} expand={expand} className="bg-body-tertiary">
+            {[false].map((expand, index) => (
+                <Navbar key={index} expand={expand} className="bg-body-tertiary">
                     <Container className="my-nav">
                         <Navbar.Brand as={Link} to={'/'} id='nav-tilte'>CORTE LITERARIO</Navbar.Brand>
                         <Navbar.Toggle
