@@ -17,6 +17,7 @@ import Pagination from 'react-bootstrap/Pagination';
 import { IPaginatedBooks } from '../interfaces/IPaginatedBooks';
 import { useSelector } from "react-redux";
 import { RootType } from "../states/store";
+import PriceRange from '../components/PriceRange';
 
 interface CatalogPageProps {
     title: string;
@@ -39,12 +40,57 @@ const CatalogPage = (props: CatalogPageProps) => {
     const itemsPerPage = 12;
     const [totalPages, setTotalPages] = useState(1);
 
-    const url = selectedGenre
-        ? `http://localhost:3000/libros?genero=${selectedGenre}&_page=${currentPage}&_per_page=${itemsPerPage}`
-        : `http://localhost:3000/libros?_page=${currentPage}&_per_page=${itemsPerPage}`;
+
+
+
+    /* ESTADOS PARA FILTROS */
+    const [selectedGenresTemp, setSelectedGenresTemp] = useState<string[]>([]);
+    const [appliedGenres, setAppliedGenres] = useState<string[]>([]);
+    const [selectedEditorialsTemp, setSelectedEditorialsTemp] = useState<string[]>([]);
+    const [appliedEditorials, setAppliedEditorials] = useState<string[]>([]);
+
+    // HANDLES FILTROS
+    const handleGenreChange = (genre: string) => {
+        setSelectedGenresTemp((prevGenres) =>
+            prevGenres.includes(genre)
+                ? prevGenres.filter((g) => g !== genre)
+                : [...prevGenres, genre]
+        );
+    };
+
+    const handleEditorialChange = (editorial: string) => {
+        setSelectedEditorialsTemp((prevEditorials) =>
+            prevEditorials.includes(editorial)
+                ? prevEditorials.filter((e) => e !== editorial)
+                : [...prevEditorials, editorial]
+        );
+    };
+
+    // APLICAR FILTROS
+    const handleApplyFilters = () => {
+        setAppliedGenres(selectedGenresTemp);
+        setAppliedEditorials(selectedEditorialsTemp)
+        handleClose();
+    };
+
+    // URL
+    const baseURL = "http://localhost:3000/libros?";
+    const genreParam = selectedGenre ? `genero=${encodeURIComponent(selectedGenre)}` : "";
+    const appliedGenresParam = appliedGenres.length ? `genero=${appliedGenres.map(encodeURIComponent).join("&genero=")}` : "";
+    const appliedEditorialsParam = appliedEditorials.length ? `editorial=${appliedEditorials.map(encodeURIComponent).join("&editorial=")}` : "";
+    const paginationParams = `_page=${currentPage}&_per_page=${itemsPerPage}`;
+
+    const url = [
+        genreParam,
+        appliedGenresParam,
+        appliedEditorialsParam,
+        paginationParams
+    ].filter(param => param).join("&");
+
+    const finalURL = `${baseURL}${url}`;
 
     /* LLAMADA PARA OBTENER LIBROS */
-    const { data: books, loading: loadingBooks, error: errorBook } = useFetch<IPaginatedBooks>(url);
+    const { data: books, loading: loadingBooks, error: errorBook } = useFetch<IPaginatedBooks>(finalURL);
 
     /* LLAMADA PARA EXTRAER PÁGINAS TOTALES */
     useEffect(() => {
@@ -169,77 +215,79 @@ const CatalogPage = (props: CatalogPageProps) => {
                         <Offcanvas.Title></Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body className='offcanvas-filter'>
-
-                        <NavDropdown title="ORDENAR POR">
-                            <NavDropdown.Item onClick={handleNoPropagation} >
-                                <input type="checkbox" id='precio-mayor' onClick={handleNoPropagation} />
-                                <label htmlFor="precio-mayor" onClick={handleNoPropagation} >PRECIO (MAYOR A MENOR)</label>
-                            </NavDropdown.Item>
-
-                            <NavDropdown.Item onClick={handleNoPropagation} >
-                                <input type="checkbox" id='precio-menor' onClick={handleNoPropagation} />
-                                <label htmlFor="precio-menor" onClick={handleNoPropagation} >PRECIO (MENOR A MAYOR)</label>
-                            </NavDropdown.Item>
-
-                            <NavDropdown.Item onClick={handleNoPropagation} >
-                                <input type="checkbox" id='nombre-a' onClick={handleNoPropagation} />
-                                <label htmlFor="nombre-a" onClick={handleNoPropagation} >NOMBRE (A a Z)</label>
-                            </NavDropdown.Item>
-
-                            <NavDropdown.Item onClick={handleNoPropagation} >
-                                <input type="checkbox" id='nombre-z' onClick={handleNoPropagation} />
-                                <label htmlFor="nombre-z" onClick={handleNoPropagation}>NOMBRE (Z a A)</label>
-                            </NavDropdown.Item>
-                        </NavDropdown>
-
-                        <NavDropdown title="GÉNERO">
-                            {/* PINTAR GÉNEROS */}
-                            {genres && genres.map((genero) => (
-                                <NavDropdown.Item key={genero.id} onClick={handleNoPropagation}>
-                                    <input
-                                        type="checkbox"
-                                        name={`genre-${genero.id}`}
-                                        id={`genre-${genero.id}`}
-                                        value={`genre-${genero.id}`}
-                                        onClick={handleNoPropagation} />
-                                    <label
-                                        htmlFor={`genre-${genero.id}`}
-                                        onClick={handleNoPropagation}>
-                                        {genero.genero}
-                                    </label>
+                        <div className='filters-container'>
+                            <NavDropdown title="ORDENAR POR">
+                                <NavDropdown.Item onClick={handleNoPropagation} >
+                                    <input type="checkbox" id='precio-mayor' onClick={handleNoPropagation} />
+                                    <label htmlFor="precio-mayor" onClick={handleNoPropagation} >PRECIO (MAYOR A MENOR)</label>
                                 </NavDropdown.Item>
-                            ))}
-                        </NavDropdown>
 
-                        <NavDropdown title="EDITORIAL">
-                            {/* PINTAR EDITORIALES */}
-                            {editorials && editorials.map((editorial) => (
-                                <NavDropdown.Item key={editorial.id} onClick={handleNoPropagation}>
-                                    <input
-                                        type="checkbox"
-                                        name={`editorial-${editorial.id}`}
-                                        id={`editorial-${editorial.id}`}
-                                        value={`editorial-${editorial.id}`}
-                                        onClick={handleNoPropagation} />
-                                    <label
-                                        htmlFor={`editorial-${editorial.id}`}
-                                        onClick={handleNoPropagation}>
-                                        {editorial.editorial}
-                                    </label>
+                                <NavDropdown.Item onClick={handleNoPropagation} >
+                                    <input type="checkbox" id='precio-menor' onClick={handleNoPropagation} />
+                                    <label htmlFor="precio-menor" onClick={handleNoPropagation} >PRECIO (MENOR A MAYOR)</label>
                                 </NavDropdown.Item>
-                            ))}
-                        </NavDropdown>
 
-                        <NavDropdown
-                            title="PRECIO">
-                            <NavDropdown.Item onClick={handleNoPropagation}>
+                                <NavDropdown.Item onClick={handleNoPropagation} >
+                                    <input type="checkbox" id='nombre-a' onClick={handleNoPropagation} />
+                                    <label htmlFor="nombre-a" onClick={handleNoPropagation} >NOMBRE (A a Z)</label>
+                                </NavDropdown.Item>
 
-                            </NavDropdown.Item>
-                        </NavDropdown>
+                                <NavDropdown.Item onClick={handleNoPropagation} >
+                                    <input type="checkbox" id='nombre-z' onClick={handleNoPropagation} />
+                                    <label htmlFor="nombre-z" onClick={handleNoPropagation}>NOMBRE (Z a A)</label>
+                                </NavDropdown.Item>
+                            </NavDropdown>
 
-                        <Button id='primary-button'>Filtrar</Button>
-                        <Button id='secondary-button'>Borrar</Button>
+                            <NavDropdown title="GÉNERO">
+                                {/* PINTAR GÉNEROS */}
+                                {genres && genres.map((genero) => (
+                                    <NavDropdown.Item key={genero.id} onClick={handleNoPropagation}>
+                                        <input
+                                            type="checkbox"
+                                            id={`genre-${genero.id}`}
+                                            checked={selectedGenresTemp.includes(genero.genero)}
+                                            onChange={() => handleGenreChange(genero.genero)}
+                                            onClick={handleNoPropagation} />
+                                        <label
+                                            htmlFor={`genre-${genero.id}`}
+                                            onClick={handleNoPropagation}>
+                                            {genero.genero}
+                                        </label>
+                                    </NavDropdown.Item>
+                                ))}
+                            </NavDropdown>
 
+                            <NavDropdown title="EDITORIAL">
+                                {/* PINTAR EDITORIALES */}
+                                {editorials && editorials.map((editorial) => (
+                                    <NavDropdown.Item key={editorial.id} onClick={handleNoPropagation}>
+                                        <input
+                                            type="checkbox"
+                                            id={`editorial-${editorial.id}`}
+                                            checked={selectedEditorialsTemp.includes(editorial.editorial)}
+                                            onChange={() => handleEditorialChange(editorial.editorial)}
+                                            onClick={handleNoPropagation} />
+                                        <label
+                                            htmlFor={`editorial-${editorial.id}`}
+                                            onClick={handleNoPropagation}>
+                                            {editorial.editorial}
+                                        </label>
+                                    </NavDropdown.Item>
+                                ))}
+                            </NavDropdown>
+
+                            <NavDropdown
+                                title="PRECIO">
+                                <NavDropdown.Item onClick={handleNoPropagation}>
+                                    <p>Rango de precios:</p>
+                                    <PriceRange></PriceRange>
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                        </div>
+                        <div className='filter-buttons-container'>
+                            <Button id='primary-button' onClick={handleApplyFilters}>Filtrar</Button>
+                            <Button id='secondary-button'>Borrar</Button>
+                        </div>
                     </Offcanvas.Body >
                 </Offcanvas >
             </Container >
