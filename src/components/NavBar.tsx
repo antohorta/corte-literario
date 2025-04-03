@@ -56,7 +56,13 @@ const NavBar = () => {
     }, [query, data]);
 
     /* HANDLES DE OFFCANVAS BARRA BÚSQUEDA */
-    const handleCloseSearch = () => setShowSearch(false);
+    const handleCloseSearch = () => {
+        setShowSearch(false);
+        setQuery('');
+        setResults([]);
+        setHasSearched(false);
+    };
+
     const handleShowSearch = () => setShowSearch(true);
 
     /* HANDLES DE OFFCANVAS CARRO */
@@ -141,7 +147,8 @@ const NavBar = () => {
                                             type="text"
                                             placeholder="Busca tu próxima historia..."
                                             onChange={handleSearchChange}
-                                            value={query} />
+                                            value={query}
+                                        />
                                     </Form.Group>
                                 </Form>
 
@@ -157,8 +164,10 @@ const NavBar = () => {
                                                         </div>
                                                         <div className='card-result-info-container'>
                                                             <p className='titulo'>{book.titulo}</p>
-                                                            <p className='autor'>{book.autor}</p>
-                                                            <p className='titulo'>{`$${book.precio.toLocaleString()}`}</p>
+                                                            <div>
+                                                                <p className='autor'>{book.autor}</p>
+                                                                <p className='titulo'>{`$${book.precio.toLocaleString()}`}</p>
+                                                            </div>
                                                         </div>
                                                     </Link>
                                                 </div>
@@ -168,11 +177,16 @@ const NavBar = () => {
                                     {hasSearched && results.length === 0 && (
                                         <p style={{ color: 'white' }}>No se encontraron resultados para "{query}"</p>
                                     )}
-                                    <div className='all-results-container'>
-                                        <a href='#' id='all-results-link'>
-                                            Ver todos los resultados
-                                        </a>
-                                    </div>
+                                    {results.length > 0 && (
+                                        <div className='all-results-container'>
+                                            <Link
+                                                to={`/search?q=${encodeURIComponent(query)}`}
+                                                id='all-results-link'
+                                            >
+                                                Ver todos los resultados
+                                            </Link>
+                                        </div>
+                                    )}
                                 </div>
                             </Offcanvas.Body>
                         </Offcanvas>

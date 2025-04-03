@@ -74,7 +74,7 @@
 
 .cart-list-info-container {
     width: 60%;
-    padding: 0rem;
+    padding: 0rem 1rem 0rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,6 +95,15 @@
 .total-price {
     color: #D9D9D9;
     font-size: 0.8;
+}
+
+.cart-list-info-container .titulo {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .cart-list-info-container .autor {

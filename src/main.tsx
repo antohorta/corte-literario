@@ -12,6 +12,7 @@ import SignUpPage from './pages/SignUpPage'
 import { Provider } from 'react-redux'
 import { store } from './states/store'
 import BookDetailPage from './pages/BookDetailPage'
+import SearchPage from './pages/SearchPage'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -25,6 +26,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path='/libro/:isbn' element={<BookDetailPage title='Detalles del Libro' />} />
           <Route path='/login' element={<LogInPage title='Iniciar sesión' />} />
           <Route path='/signup' element={<SignUpPage title='Crear cuenta' />} />
+          <Route path='/search' element={<SearchPage />} />
           <Route path="*" element={<HomePage title='Corte Literario' />} />
         </Routes>
       </BrowserRouter>

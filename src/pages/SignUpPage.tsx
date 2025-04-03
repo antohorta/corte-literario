@@ -22,19 +22,19 @@ const SignUpPage = (props: SignUpPageProps) => {
                         <h2 className='login-title'>Crear cuenta</h2>
                         <Form className='login-form'>
 
-                            <FloatingLabel className="mb-5 mt-5" controlId="nombre" label="Nombre">
+                            <FloatingLabel className="mb-4 mt-4" controlId="nombre" label="Nombre">
                                 <Form.Control type="text" placeholder="Nombre" />
                             </FloatingLabel>
 
-                            <FloatingLabel className="mb-5 mt-5" controlId="apellido" label="Apellido">
+                            <FloatingLabel className="mb-4 mt-4" controlId="apellido" label="Apellido">
                                 <Form.Control type="text" placeholder="Apellido" />
                             </FloatingLabel>
 
-                            <FloatingLabel className="mb-5 mt-5" controlId="correo" label="Correo electrónico">
+                            <FloatingLabel className="mb-4 mt-4" controlId="correo" label="Correo electrónico">
                                 <Form.Control type="email" placeholder="Correo electrónico" />
                             </FloatingLabel>
 
-                            <FloatingLabel className="mb-5 mt-5" controlId="contrasena" label="Contraseña">
+                            <FloatingLabel className="mb-4 mt-4" controlId="contrasena" label="Contraseña">
                                 <Form.Control type="password" placeholder="Contraseña" />
                             </FloatingLabel>
 

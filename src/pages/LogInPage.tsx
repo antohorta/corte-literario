@@ -22,11 +22,11 @@ const LogInPage = (props: LoginPageProps) => {
                     <Col lg={6} className='login-form-container'>
                         <h2 className='login-title'>Iniciar sesión</h2>
                         <Form className='login-form'>
-                            <FloatingLabel className="mb-5 mt-5" controlId="correo" label="Correo electrónico">
+                            <FloatingLabel className="mb-4 mt-4" controlId="correo" label="Correo electrónico">
                                 <Form.Control type="email" placeholder="Correo electrónico" />
                             </FloatingLabel>
 
-                            <FloatingLabel className="mb-5 mt-5" controlId="contrasena" label="Contraseña">
+                            <FloatingLabel className="mb-4 mt-4" controlId="contrasena" label="Contraseña">
                                 <Form.Control type="password" placeholder="Contraseña" />
                             </FloatingLabel>
 

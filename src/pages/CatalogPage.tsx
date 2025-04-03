@@ -37,19 +37,17 @@ const CatalogPage = (props: CatalogPageProps) => {
 
     /* ESTADO PAGINACIÓN */
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 6;
+    const itemsPerPage = 12;
     const [totalPages, setTotalPages] = useState(1);
-
-
-
 
     /* ESTADOS PARA FILTROS */
     const [selectedGenresTemp, setSelectedGenresTemp] = useState<string[]>([]);
     const [appliedGenres, setAppliedGenres] = useState<string[]>([]);
     const [selectedEditorialsTemp, setSelectedEditorialsTemp] = useState<string[]>([]);
     const [appliedEditorials, setAppliedEditorials] = useState<string[]>([]);
+    const [sortOption, setSortOption] = useState<{ sort: string; order: "asc" | "desc" } | null>(null);
 
-    // HANDLES FILTROS
+    // HANDLE FILTRO GÉNEROS
     const handleGenreChange = (genre: string) => {
         setSelectedGenresTemp((prevGenres) =>
             prevGenres.includes(genre)
@@ -58,12 +56,18 @@ const CatalogPage = (props: CatalogPageProps) => {
         );
     };
 
+    // HANDLE FILTRO EDITORIALES
     const handleEditorialChange = (editorial: string) => {
         setSelectedEditorialsTemp((prevEditorials) =>
             prevEditorials.includes(editorial)
                 ? prevEditorials.filter((e) => e !== editorial)
                 : [...prevEditorials, editorial]
         );
+    };
+
+    // HANDLE FILTROS PRECIO + A, Z
+    const handleSortSelection = (sort: string, order: "asc" | "desc") => {
+        setSortOption({ sort, order });
     };
 
     // APLICAR FILTROS
@@ -73,18 +77,27 @@ const CatalogPage = (props: CatalogPageProps) => {
         handleClose();
     };
 
+    // BORRAR FILTROS
+    const handleDeleteFilters = () => {
+        setAppliedGenres([]);
+        setAppliedEditorials([])
+        handleClose();
+    };
+
     // URL
     const baseURL = "http://localhost:3000/libros?";
     const genreParam = selectedGenre ? `genero=${encodeURIComponent(selectedGenre)}` : "";
     const appliedGenresParam = appliedGenres.length ? `genero=${appliedGenres.map(encodeURIComponent).join("&genero=")}` : "";
     const appliedEditorialsParam = appliedEditorials.length ? `editorial=${appliedEditorials.map(encodeURIComponent).join("&editorial=")}` : "";
+    const sortParam = sortOption ? `_sort=${sortOption.sort}&_order=${sortOption.order}` : "";
     const paginationParams = `_page=${currentPage}&_limit=${itemsPerPage}`;
 
     const url = [
         genreParam,
         appliedGenresParam,
         appliedEditorialsParam,
-        paginationParams
+        paginationParams,
+        sortParam
     ].filter(param => param).join("&");
 
     const finalURL = `${baseURL}${url}`;
@@ -110,13 +123,7 @@ const CatalogPage = (props: CatalogPageProps) => {
         e.stopPropagation();
     };
 
-    if (loadingBooks || loadingGenres || loadingEditorials) return <p>Cargando...</p>
-    if (errorBook) return <p>Error en la consulta de datos {errorBook}</p>
-    if (errorGenres) return <p>Error en la consulta de datos {errorGenres}</p>
-    if (errorEditorials) return <p>Error en la consulta de datos {errorGenres}</p>
-
     /* HANDLES PAGINACIÓN */
-
     const paginationItems = [];
 
     const handlePageChange = (pageNumber: number) => {
@@ -152,6 +159,11 @@ const CatalogPage = (props: CatalogPageProps) => {
     }
 
     console.log(`La url del catalolo es: ${finalURL}`)
+
+    if (loadingBooks || loadingGenres || loadingEditorials) return <p>Cargando...</p>
+    if (errorBook) return <p>Error en la consulta de datos {errorBook}</p>
+    if (errorGenres) return <p>Error en la consulta de datos {errorGenres}</p>
+    if (errorEditorials) return <p>Error en la consulta de datos {errorGenres}</p>
 
     return (
         <MainLayout>
@@ -226,24 +238,20 @@ const CatalogPage = (props: CatalogPageProps) => {
                     <Offcanvas.Body className='offcanvas-filter'>
                         <div className='filters-container'>
                             <NavDropdown title="ORDENAR POR">
-                                <NavDropdown.Item onClick={handleNoPropagation} >
-                                    <input type="checkbox" id='precio-mayor' onClick={handleNoPropagation} />
-                                    <label htmlFor="precio-mayor" onClick={handleNoPropagation} >PRECIO (MAYOR A MENOR)</label>
+                                <NavDropdown.Item onClick={(e) => { handleNoPropagation(e); handleSortSelection("precio", "desc"); }} >
+                                    PRECIO (MAYOR A MENOR)
                                 </NavDropdown.Item>
 
-                                <NavDropdown.Item onClick={handleNoPropagation} >
-                                    <input type="checkbox" id='precio-menor' onClick={handleNoPropagation} />
-                                    <label htmlFor="precio-menor" onClick={handleNoPropagation} >PRECIO (MENOR A MAYOR)</label>
+                                <NavDropdown.Item onClick={(e) => { handleNoPropagation(e); handleSortSelection("precio", "asc"); }} >
+                                    PRECIO (MENOR A MAYOR)
                                 </NavDropdown.Item>
 
-                                <NavDropdown.Item onClick={handleNoPropagation} >
-                                    <input type="checkbox" id='nombre-a' onClick={handleNoPropagation} />
-                                    <label htmlFor="nombre-a" onClick={handleNoPropagation} >NOMBRE (A a Z)</label>
+                                <NavDropdown.Item onClick={(e) => { handleNoPropagation(e); handleSortSelection("titulo", "asc"); }} >
+                                    NOMBRE (A a Z)
                                 </NavDropdown.Item>
 
-                                <NavDropdown.Item onClick={handleNoPropagation} >
-                                    <input type="checkbox" id='nombre-z' onClick={handleNoPropagation} />
-                                    <label htmlFor="nombre-z" onClick={handleNoPropagation}>NOMBRE (Z a A)</label>
+                                <NavDropdown.Item onClick={(e) => { handleNoPropagation(e); handleSortSelection("titulo", "desc"); }} >
+                                    NOMBRE (Z a A)
                                 </NavDropdown.Item>
                             </NavDropdown>
 
@@ -295,7 +303,7 @@ const CatalogPage = (props: CatalogPageProps) => {
                         </div>
                         <div className='filter-buttons-container'>
                             <Button id='primary-button' onClick={handleApplyFilters}>Filtrar</Button>
-                            <Button id='secondary-button'>Borrar</Button>
+                            <Button id='secondary-button' onClick={handleDeleteFilters}>Borrar</Button>
                         </div>
                     </Offcanvas.Body >
                 </Offcanvas >

@@ -33,8 +33,10 @@ const BookCard = (props: BookCardProps) => {
 
                 <div className='card-info-container'>
                     <p className='titulo'>{props.book.titulo}</p>
-                    <p className='autor'>{props.book.autor}</p>
-                    <p className='precio'>{`$${props.book.precio.toLocaleString()}`}</p>
+                    <div>
+                        <p className='autor'>{props.book.autor}</p>
+                        <p className='precio'>{`$${props.book.precio.toLocaleString()}`}</p>
+                    </div>
                 </div>
             </Link>
         </div>

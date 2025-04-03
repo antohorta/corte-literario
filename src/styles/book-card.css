@@ -1,6 +1,6 @@
 .card-container {
     width: 13rem;
-    height: auto;
+    height: 24.5rem;
     flex-shrink: 0;
     border-radius: 0rem;
     border: none;
@@ -30,6 +30,13 @@
     text-decoration: none !important;
 }
 
+.card-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 6.5rem; 
+}
+
 .card-info-container .titulo {
     color: #222;
     font-family: "Roboto Mono";
@@ -38,6 +45,12 @@
     font-weight: 700;
     line-height: normal;
     margin: 0.75rem 0rem 0.3rem 0rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card-info-container .autor {
@@ -58,6 +71,13 @@
     font-weight: 400;
     line-height: normal;
     margin: 0.3rem 0rem 0.3rem 0rem;
+}
+
+.card-container .autor,
+.card-container .precio {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .add-cart-button {
