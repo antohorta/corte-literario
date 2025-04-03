@@ -14,10 +14,10 @@ import { IGenre } from '../interfaces/IGenre';
 import { NavDropdown } from 'react-bootstrap';
 import { IEditorial } from '../interfaces/IEditorial';
 import Pagination from 'react-bootstrap/Pagination';
-import { IPaginatedBooks } from '../interfaces/IPaginatedBooks';
 import { useSelector } from "react-redux";
 import { RootType } from "../states/store";
 import PriceRange from '../components/PriceRange';
+import { IBook } from '../interfaces/IBook';
 
 interface CatalogPageProps {
     title: string;
@@ -37,7 +37,7 @@ const CatalogPage = (props: CatalogPageProps) => {
 
     /* ESTADO PAGINACIÓN */
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 12;
+    const itemsPerPage = 6;
     const [totalPages, setTotalPages] = useState(1);
 
 
@@ -78,7 +78,7 @@ const CatalogPage = (props: CatalogPageProps) => {
     const genreParam = selectedGenre ? `genero=${encodeURIComponent(selectedGenre)}` : "";
     const appliedGenresParam = appliedGenres.length ? `genero=${appliedGenres.map(encodeURIComponent).join("&genero=")}` : "";
     const appliedEditorialsParam = appliedEditorials.length ? `editorial=${appliedEditorials.map(encodeURIComponent).join("&editorial=")}` : "";
-    const paginationParams = `_page=${currentPage}&_per_page=${itemsPerPage}`;
+    const paginationParams = `_page=${currentPage}&_limit=${itemsPerPage}`;
 
     const url = [
         genreParam,
@@ -90,14 +90,14 @@ const CatalogPage = (props: CatalogPageProps) => {
     const finalURL = `${baseURL}${url}`;
 
     /* LLAMADA PARA OBTENER LIBROS */
-    const { data: books, loading: loadingBooks, error: errorBook } = useFetch<IPaginatedBooks>(finalURL);
+    const { data: books, loading: loadingBooks, error: errorBook, totalCount } = useFetch<IBook[]>(finalURL);
 
     /* LLAMADA PARA EXTRAER PÁGINAS TOTALES */
     useEffect(() => {
-        if (books) {
-            setTotalPages(books.pages);
+        if (totalCount !== undefined) {
+            setTotalPages(Math.ceil(totalCount / itemsPerPage));
         }
-    }, [books]);
+    }, [totalCount, itemsPerPage]);
 
     /* LLAMADA PARA OBTENER GÉNEROS */
     const { data: genres, loading: loadingGenres, error: errorGenres } = useFetch<IGenre[]>('http://localhost:3000/generos');
@@ -151,6 +151,8 @@ const CatalogPage = (props: CatalogPageProps) => {
         );
     }
 
+    console.log(`La url del catalolo es: ${finalURL}`)
+
     return (
         <MainLayout>
             <Container className='catalog-page-container'>
@@ -176,37 +178,44 @@ const CatalogPage = (props: CatalogPageProps) => {
 
                 <Row>
                     <Col lg={12} className='catalog-cards-container'>
-                        {books?.data && books.data.map((book) => (
+                        {books?.map((book) => (
                             <BookCard
                                 key={book.isbn}
                                 book={book}
-                                noStock={book.stock === 0} />
+                                noStock={book.stock === 0}
+                            />
                         ))}
+
                     </Col>
                 </Row>
 
                 {/* PAGINACIÓN */}
 
-                {books && books.data ? (<Pagination>
-                    <Pagination.First
-                        onClick={handleFirstPage}
-                        disabled={currentPage === 1}
-                        className={currentPage === 1 ? 'pagination-disabled' : ''} />
-                    <Pagination.Prev
-                        onClick={handlePrevPage}
-                        disabled={currentPage === 1}
-                        className={currentPage === 1 ? 'pagination-disabled' : ''} />
-                    {paginationItems}
-                    <Pagination.Next
-                        onClick={handleNextPage}
-                        disabled={currentPage === totalPages}
-                        className={currentPage === totalPages ? 'pagination-disabled' : ''} />
-                    <Pagination.Last
-                        onClick={handleLastPage}
-                        disabled={currentPage === totalPages}
-                        className={currentPage === totalPages ? 'pagination-disabled' : ''} />
-                </Pagination>)
-                    : null}
+                {books && books.length > 0 ? (
+                    <Pagination>
+                        <Pagination.First
+                            onClick={handleFirstPage}
+                            disabled={currentPage === 1}
+                            className={currentPage === 1 ? 'pagination-disabled' : ''}
+                        />
+                        <Pagination.Prev
+                            onClick={handlePrevPage}
+                            disabled={currentPage === 1}
+                            className={currentPage === 1 ? 'pagination-disabled' : ''}
+                        />
+                        {paginationItems}
+                        <Pagination.Next
+                            onClick={handleNextPage}
+                            disabled={currentPage === totalPages}
+                            className={currentPage === totalPages ? 'pagination-disabled' : ''}
+                        />
+                        <Pagination.Last
+                            onClick={handleLastPage}
+                            disabled={currentPage === totalPages}
+                            className={currentPage === totalPages ? 'pagination-disabled' : ''}
+                        />
+                    </Pagination>
+                ) : null}
 
                 {/* FILTROS */}
 

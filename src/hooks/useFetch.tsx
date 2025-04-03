@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 
-export function useFetch<T>(url: string): { data: T | null, loading: boolean, error: string } {
+export function useFetch<T>(url: string): { data: T | null, loading: boolean, error: string, totalCount?: number } {
 
     const [data, setData] = useState<T | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string>('');
+    const [totalCount, setTotalCount] = useState<number | undefined>(undefined);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -13,6 +14,11 @@ export function useFetch<T>(url: string): { data: T | null, loading: boolean, er
                 if (response.ok) {
                     const json = await response.json();
                     setData(json);
+
+                    const total = response.headers.get("X-Total-Count");
+                    if (total) {
+                        setTotalCount(parseInt(total, 10));
+                    }
                 } else {
                     setError(response.statusText);
                 }
@@ -25,5 +31,5 @@ export function useFetch<T>(url: string): { data: T | null, loading: boolean, er
         fetchData();
     }, [url]);
 
-    return { data, loading, error }
+    return { data, loading, error, totalCount };
 }

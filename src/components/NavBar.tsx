@@ -34,14 +34,26 @@ const NavBar = () => {
     /* ESTADOS DE OFFCANVAS CARRO */
     const [showCart, setShowCart] = useState(false);
 
-    /* ESTADOS PARA BÚSQUEDA */
+    /* ESTADOS PARA BÚSQUEDA + RESULTAODS */
     const [query, setQuery] = useState('');
+    const [results, setResults] = useState<IBook[]>([]);
+    const [hasSearched, setHasSearched] = useState(false);
 
     /* OBTENER GÉNEROS AL CARGAR COMPONENTE */
     const { data: genres, loading: loadingGenres, error: errorGenres } = useFetch<IGenre[]>('http://localhost:3000/generos');
 
     /* OBTENER RESULTADOS BÚSQUEDA */
-    const { data: results, loading: loadingResults, error: errorResults } = useFetch<IBook[]>(`http://localhost:3000/libros?q=${query}`)
+    const { data, loading: loadingResults, error: errorResults } = useFetch<IBook[]>(`http://localhost:3000/libros?q=${query}`)
+
+    useEffect(() => {
+        if (query) {
+            if (data) {
+                setResults(data);
+            }
+        } else {
+            setResults([]);
+        }
+    }, [query, data]);
 
     /* HANDLES DE OFFCANVAS BARRA BÚSQUEDA */
     const handleCloseSearch = () => setShowSearch(false);
@@ -54,6 +66,7 @@ const NavBar = () => {
     /* HANDLES DE OFFCANVAS BARRA BÚSQUEDA */
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setQuery(e.target.value);
+        setHasSearched(true);
     }
 
     /* HANDLE PARA FILTRO DE + EVITAR QUE DROPDOWN SE CIERRE */
@@ -152,8 +165,8 @@ const NavBar = () => {
                                             ))}
                                         </div>
                                     )}
-                                    {results && results.length === 0 && (
-                                        <p style={{ color: 'white' }}>No se encontraron resultados para "{query}.</p>
+                                    {hasSearched && results.length === 0 && (
+                                        <p style={{ color: 'white' }}>No se encontraron resultados para "{query}"</p>
                                     )}
                                     <div className='all-results-container'>
                                         <a href='#' id='all-results-link'>
