@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import '../styles/footer.css'
 import { Link } from 'react-router-dom';
 
@@ -29,10 +30,9 @@ const Footer = () => {
                     <Col lg={4}>
                         <p className='footer-link-title'>Únete a nuestra comunidad</p>
                         <Form className='footer-input-container'>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label></Form.Label>
+                            <FloatingLabel className="mb-3" controlId="correo" label='Ingresa tu mail'>
                                 <Form.Control type="email" placeholder="Ingresa tu mail" />
-                            </Form.Group>
+                            </FloatingLabel>
                             <Button variant="primary" type="submit">
                                 Suscríbete
                             </Button>

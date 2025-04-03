@@ -10,7 +10,7 @@ import Form from 'react-bootstrap/Form';
 import BookSlide from './BookSlide';
 import Header from './Header';
 import { Link } from 'react-router-dom';
-
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
 const Home = () => {
     return (
@@ -71,10 +71,9 @@ const Home = () => {
                     <Col lg={6} className='suscribe-input-container' style={{ margin: '0rem !important', padding: '0rem' }}>
                         <h3>Únete a nuestra comunidad</h3>
                         <Form>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label></Form.Label>
+                            <FloatingLabel className="mb-3" controlId="formBasicEmail" label='Ingresa tu mail'>
                                 <Form.Control type="email" placeholder="Ingresa tu mail" />
-                            </Form.Group>
+                            </FloatingLabel>
                             <Button variant="primary" type="submit">
                                 Suscríbete
                             </Button>

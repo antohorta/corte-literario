@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Col from 'react-bootstrap/Col'; import '../styles/contact.css'
 import MainLayout from '../layout/MainLayout';
 
@@ -33,21 +34,21 @@ const ContactPage = (props: ContactPageProps) => {
                     <Col lg={2}></Col>
                     <Col lg={5}>
                         <Form className='contact-input-container'>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <FloatingLabel className="mb-3" controlId="nombre" label='Nombre'>
                                 <Form.Control type="email" placeholder="Nombre" required />
-                            </Form.Group>
+                            </FloatingLabel>
 
-                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <FloatingLabel className="mb-3" controlId="mail" label='Mail'>
                                 <Form.Control type="email" placeholder="Mail" required />
-                            </Form.Group>
+                            </FloatingLabel>
 
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <FloatingLabel className="mb-3" controlId="asunto" label='Asunto'>
                                 <Form.Control type="text" placeholder="Asunto" required />
-                            </Form.Group>
+                            </FloatingLabel>
 
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <FloatingLabel className="mb-3" controlId="mensaje" label='Mensaje'>
                                 <Form.Control type="text" placeholder="Mensaje" required />
-                            </Form.Group>
+                            </FloatingLabel>
 
                             <Button variant="primary" type="submit">
                                 Enviar

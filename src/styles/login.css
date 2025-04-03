@@ -54,7 +54,7 @@
 }
 
 /* FLOATING LABELS */
-.form-floating>label {
+.login-form .form-floating>label {
     color: #666666 !important;
     background-color: transparent !important;
     font-family: "Roboto Mono";
@@ -67,10 +67,10 @@
     text-decoration: none;
 }
 
-.form-floating>.form-control-plaintext~label::after,
-.form-floating>.form-control:focus~label::after,
-.form-floating>.form-control:not(:placeholder-shown)~label::after,
-.form-floating>.form-select~label::after {
+.login-form .form-floating>.form-control-plaintext~label::after,
+.login-form .form-floating>.form-control:focus~label::after,
+.login-form .form-floating>.form-control:not(:placeholder-shown)~label::after,
+.login-form .form-floating>.form-select~label::after {
     background-color: transparent !important;
     border-radius: 0 !important;
 }

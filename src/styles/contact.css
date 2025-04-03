@@ -49,10 +49,6 @@
     line-height: normal;
 }
 
-.contact-input-container .form-control::placeholder {
-    color: #D9D9D9;
-}
-
 .contact-input-container .btn-primary,
 .contact-input-container .btn-primary:hover,
 .contact-input-container .btn-primary:focus-visible {
@@ -70,7 +66,6 @@
     margin-top: 1rem;
 }
 
-
 .contact-input-container .btn-primary:hover {
     box-shadow: 0.3rem 0.3rem #D9D9D9;
 
@@ -81,4 +76,26 @@
     color: #222 !important;
     box-shadow: 0.3rem 0.3rem #D9D9D9;
     border: 2px solid #222 !important;
+}
+
+/* FLOATING LABELS */
+.contact-input-container .form-floating>label {
+    color: #D9D9D9 !important;
+    background-color: transparent !important;
+    font-family: "Roboto Mono";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-shadow: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.contact-input-container .form-floating>.form-control-plaintext~label::after,
+.contact-input-container .form-floating>.form-control:focus~label::after,
+.contact-input-container .form-floating>.form-control:not(:placeholder-shown)~label::after,
+.contact-input-container .form-floating>.form-select~label::after {
+    background-color: transparent !important;
+    border-radius: 0 !important;
 }
