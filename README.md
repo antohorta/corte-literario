@@ -1,7 +1,6 @@
-[Español](#Descripción)
-[English](#Description)
+[Español](#Corte-Literario-(Español))   | [English](#Corte-Literario-(English))
 
-# Corte Literario
+# Corte Literario (Español)
 
 ## Descripción
 
@@ -86,7 +85,7 @@ Si tienes alguna pregunta, puedes contactarme a través de:
 <br>
 <br>
 
-# Corte Literario
+# Corte Literario (English)
 
 ## Description
 
@@ -94,7 +93,7 @@ Si tienes alguna pregunta, puedes contactarme a través de:
 
 ## Contents
  1. [Technologies used](#Technologies-used)
- 2. [Prerequisites](#Prerequisites-previos)
+ 2. [Prerequisites](#Prerequisites)
  3. [Installation](#Installation)
  4. [Running the project](#Running-the-project)
  5. [Workflow](#Workflow)
