@@ -1,24 +1,208 @@
-.nav {
-    background-color: #222;
+.my-nav-container .bg-body-tertiary {
+    background-color: #222 !important;
+    padding: 0rem !important;
     width: 100%;
-    height: 82px;
+}
+
+.my-nav-container {
+    width: 100%;
+    border-bottom: 2px solid #D9D9D9;
+}
+
+.my-nav {
+    background-color: #222 !important;
+    width: 100%;
+    height: 4rem;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between !important;
     align-items: center;
 }
 
-.nav a {
-    color: #D9D9D9;
+#nav-tilte {
+    color: #D9D9D9 !important;
+    font-family: "Funnel Display";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-left: 0rem;
+}
+
+.my-nav a,
+.my-nav button {
+    color: #D9D9D9 !important;
     font-family: "Roboto Mono";
-    font-size: 14px;
+    font-size: 0.8rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-decoration: none;
+    padding: 0rem 1rem 0rem 1rem;
 }
 
-.nav a:hover {
+.my-nav a:hover,
+.my-nav button:hover,
+.my-nav button:focus,
+.my-nav button:focus-visible {
     text-decoration: line-through;
+    color: #D9D9D9 !important;
+    border: none;
+    box-shadow: none;
+}
 
+.navbar-toggler {
+    margin-right: 0rem !important;
+    border: none !important;
+}
+
+
+/* BARRA DE BÚSQUEDA */
+
+.search-nav .offcanvas-header {
+    padding-bottom: 0rem !important;
+}
+
+.search-input-container .form-control,
+.search-input-container .form-control:hover,
+.search-input-container .form-control:active,
+.search-input-container .form-control:focus,
+.search-input-container .form-control:focus-visible {
+    border-radius: 0rem;
+    background-color: #222;
+    border-bottom: 2px solid #D9D9D9;
+    border-left: transparent;
+    border-right: transparent;
+    border-top: transparent;
+    box-shadow: none;
+    outline: none;
+    color: #D9D9D9;
+    margin-top: 0rem;
+    font-family: "Roboto Mono";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.search-input-container .form-control::placeholder {
+    color: #D9D9D9;
+}
+
+.search-nav.offcanvas.offcanvas-top {
+    height: fit-content;
+    max-height: 80vh;
+}
+
+@media (max-width: 768px) {
+    .search-nav.offcanvas.offcanvas-top {
+        max-height: 100vh;
+    }
+}
+
+
+/* RESULTADOS BÚSQUEDA */
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-results-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.card-result-container {
+    width: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    margin: 0.3rem 1rem;
+}
+
+#card-result-link {
+    margin: 0rem;
+    padding: 0rem;
+    text-decoration: none !important;
+}
+
+#card-result-link:hover {
+    text-decoration: none;
+}
+
+.card-result-img-container {
+    background-color: #858585;
+    width: 8rem;
+    height: 10.7rem;
+}
+
+.card-result-img-container img {
+    width: 8rem;
+    height: 10.7rem;
+    transition: transform 0.3s ease;
+}
+
+.card-result-img-container img:hover {
+    transform: scale(1.1);
+}
+
+.card-result-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 5.5rem; 
+}
+
+.card-result-info-container .titulo,
+.card-result-info-container .autor {
+    font-family: "Roboto Mono";
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0.6rem 0rem 0.1rem 0rem;
+}
+
+.card-result-info-container .titulo {
+    color: #D9D9D9;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-result-info-container .autor {
+    color: #A2A2A4;
+}
+
+.all-results-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#all-results-link {
+    font-family: "Roboto Mono" !important;
+    font-size: 0.8rem !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: normal !important;
+    margin: 0.75rem 0rem 0.3rem 0rem !important;
+    color: #D9D9D9 !important;
+    text-decoration: none;
+}
+
+#all-results-link svg {
+    margin-left: 0.5rem;
 }

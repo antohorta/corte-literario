@@ -1,0 +1,117 @@
+.detail-page-container {
+    margin-top: 4rem;
+}
+
+.detail-img-container {
+    width: 24rem;
+    height: 32rem;
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-img-container img {
+    width: 24rem;
+    height: 32rem;
+}
+
+.detail-title {
+    color: #D9D9D9;
+    font-family: "Roboto Mono";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 1rem 0rem 3rem 0rem;
+}
+
+.detail-text {
+    color: #D9D9D9 !important;
+    font-family: "Roboto Mono";
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+/* INPUT Y AÑADIR AL CARRO */
+.add-cart-input-container {
+    display: flex;
+    align-items: stretch;
+    margin-top: 1rem;
+}
+
+.detail-button,
+.detail-button:hover,
+.detail-button:focus-visible {
+    height: 2.4rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0rem;
+    background-color: #222;
+    border: 2px solid #D9D9D9;
+    color: #D9D9D9;
+    font-family: "Roboto Mono";
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    box-shadow: none;
+}
+
+.detail-button:hover {
+    box-shadow: 0.3rem 0.3rem #D9D9D9;
+}
+
+.detail-button:active {
+    background-color: #D9D9D9 !important;
+    color: #222 !important;
+    box-shadow: 0.3rem 0.3rem #D9D9D9;
+    border: 2px solid #222 !important;
+}
+
+.detail-input {
+    background-color: #222;
+    border: 2px solid #D9D9D9;
+    color: #D9D9D9;
+    margin-top: 0rem;
+    font-family: "Roboto Mono";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 2.4rem;
+    height: 2.4rem;
+    text-align: center;
+}
+
+/* ACORDIÓN */
+
+.detail-accordion {
+    padding: 2rem 0rem;
+}
+
+.detail-accordion .accordion-item,
+.detail-accordion .accordion-header {
+    background-color: #222 !important;
+}
+
+.detail-accordion .accordion-item {
+    border: none;
+}
+
+.detail-accordion .accordion-item .accordion-header .accordion-button,
+.detail-accordion .accordion-item .accordion-header .accordion-button.collapsed {
+    background-color: #222 !important;
+    color: #D9D9D9 !important;
+    box-shadow: none !important;
+    border-top: 2px solid #D9D9D9 !important;
+}
+
+.detail-accordion .accordion-item .accordion-header .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M11.25 12.75V21.75H12.75V12.75H21.75V11.25H12.75V2.25L11.25 2.25V11.25H2.25V12.75H11.25Z' fill='%23D9D9D9'/%3E%3C/svg%3E") !important;
+}
+
+.detail-accordion .accordion-item .accordion-header .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.25 11.25H21.75V12.75H2.25V11.25Z' fill='%23D9D9D9'/%3E%3C/svg%3E") !important;
+}

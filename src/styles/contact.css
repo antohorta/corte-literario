@@ -1,0 +1,101 @@
+.contact-page-container {
+    margin-top: 4rem;
+    margin-bottom: 8rem;
+}
+
+.contact-page-title {
+    color: #D9D9D9;
+    font-family: "Funnel Display";
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 7rem;
+    margin-top: 0rem;
+    padding-top: 0rem;
+    margin-bottom: 4rem;
+}
+
+.contact-page-text {
+    color: #D9D9D9;
+    text-align: justify;
+    font-family: "Funnel Display";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.contact-input-container .form-control,
+.contact-input-container .form-control:hover,
+.contact-input-container .form-control:active,
+.contact-input-container .form-control:focus,
+.contact-input-container .form-control:focus-visible {
+    width: 80%;
+    border-radius: 0rem;
+    background-color: #222;
+    border-bottom: 2px solid #D9D9D9;
+    border-left: transparent;
+    border-right: transparent;
+    border-top: transparent;
+    box-shadow: none;
+    outline: none;
+    color: #D9D9D9;
+    margin-top: 0rem;
+    margin-bottom: 2rem;
+    font-family: "Roboto Mono";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.contact-input-container .btn-primary,
+.contact-input-container .btn-primary:hover,
+.contact-input-container .btn-primary:focus-visible {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0rem;
+    background-color: #222;
+    border: 2px solid #D9D9D9;
+    color: #D9D9D9;
+    font-family: "Roboto Mono";
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    box-shadow: none;
+    margin-top: 1rem;
+}
+
+.contact-input-container .btn-primary:hover {
+    box-shadow: 0.3rem 0.3rem #D9D9D9;
+
+}
+
+.contact-input-container .btn-primary:active {
+    background-color: #D9D9D9 !important;
+    color: #222 !important;
+    box-shadow: 0.3rem 0.3rem #D9D9D9;
+    border: 2px solid #222 !important;
+}
+
+/* FLOATING LABELS */
+.contact-input-container .form-floating>label {
+    color: #D9D9D9 !important;
+    background-color: transparent !important;
+    font-family: "Roboto Mono";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-shadow: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.contact-input-container .form-floating>.form-control-plaintext~label::after,
+.contact-input-container .form-floating>.form-control:focus~label::after,
+.contact-input-container .form-floating>.form-control:not(:placeholder-shown)~label::after,
+.contact-input-container .form-floating>.form-select~label::after {
+    background-color: transparent !important;
+    border-radius: 0 !important;
+}

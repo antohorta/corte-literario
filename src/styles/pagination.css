@@ -1,0 +1,29 @@
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.pagination .page-link {
+    background-color: transparent;
+    margin: 1rem;
+    color: #D9D9D9;
+}
+
+.pagination .active>.page-link {
+    background-color: #D9D9D9;
+    color: #222;
+    border-color: #D9D9D9;
+}
+
+.pagination .page-link:focus,
+.pagination .page-link:focus-visible {
+    box-shadow: none;
+}
+
+.pagination .pagination-disabled {
+    opacity: 0.15;
+    cursor: not-allowed;
+}

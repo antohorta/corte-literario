@@ -1,7 +1,6 @@
 import React from "react";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Nav from "../components/Nav";
+import NavBar from "../components/NavBar";
 
 interface MainLayoutPorps {
     children: React.ReactNode
@@ -9,8 +8,7 @@ interface MainLayoutPorps {
 const MainLayout = (props: MainLayoutPorps) => {
     return (
         <>
-            <Nav></Nav>
-            <Header></Header>
+            <NavBar></NavBar>
             <div>{props.children}</div>
             <Footer></Footer>
         </>

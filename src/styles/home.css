@@ -1,0 +1,257 @@
+/* ABOUT HOME */
+.about-container {
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+.about-text,
+.about-link a {
+    color: #222;
+    text-align: center;
+    font-family: "Funnel Display";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.about-text {
+    font-size: 3rem;
+    line-height: 4rem;
+}
+
+.about-link {
+    margin-top: 1.81rem !important;
+}
+
+.about-link a {
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.about-link svg {
+    margin-left: 0.75rem;
+}
+
+.about-link a:hover,
+.about-link a:active {
+    text-decoration: underline;
+}
+
+
+/* MYSTERY BOXES HOME */
+
+.mystery-container {
+    padding: 5rem 5rem 5rem 5rem !important;
+}
+
+.mystery-container p,
+.mystery-container a {
+    color: #D9D9D9;
+    font-family: "Funnel Display";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 2rem 0rem;
+}
+
+.mystery-container h2 a {
+    color: #D9D9D9;
+    font-family: "Funnel Display";
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 7rem;
+    text-decoration: none;
+}
+
+.mystery-container h2 a:hover {
+    text-decoration: underline;
+}
+
+.mystery-container img {
+    width: 100%;
+    height: auto;
+}
+
+/* ESTILO LITERARIO */
+.style-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.style-image-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.style-image-container img {
+    width: 100%;
+    max-width: 51.5rem;
+    height: auto;
+}
+
+.style-image-container a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #D9D9D9;
+    font-family: "Funnel Display";
+    font-size: 6rem;
+    font-weight: 400;
+    line-height: 7rem;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.style-image-container a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .style-image-container img {
+        max-width: 100%;
+    }
+
+    .style-image-container h2 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .style-container {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .style-image-container h2 {
+        font-size: 4rem !important;
+    }
+}
+
+/* SUSCRIBIRSE */
+.suscribe-container {
+    width: 100%;
+}
+
+.suscribe-input-container {
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 10rem 4rem 10rem 4rem !important;
+}
+
+.suscribe-input-container h3 {
+    color: #222;
+    font-family: "Funnel Display";
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 4rem;
+}
+
+.suscribe-input-container .form-control,
+.suscribe-input-container .form-control:hover,
+.suscribe-input-container .form-control:active,
+.suscribe-input-container .form-control:focus,
+.suscribe-input-container .form-control:focus-visible {
+    border-radius: 0rem;
+    background-color: #D9D9D9;
+    border-bottom: 2px solid #222;
+    border-left: transparent;
+    border-right: transparent;
+    border-top: transparent;
+    box-shadow: none;
+    outline: none;
+    color: #222;
+    font-family: "Roboto Mono";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.suscribe-input-container .form-control::placeholder {
+    color: #222;
+}
+
+.suscribe-input-container .btn-primary,
+.suscribe-input-container .btn-primary:hover,
+.suscribe-input-container .btn-primary:focus-visible {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0rem;
+    background-color: #D9D9D9;
+    border: 2px solid #222;
+    color: #222;
+    font-family: "Roboto Mono";
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    box-shadow: none;
+}
+
+.suscribe-input-container .btn-primary:hover {
+    box-shadow: 0.3rem 0.3rem #222;
+}
+
+.suscribe-input-container .btn-primary:active {
+    background-color: #222 !important;
+    color: #D9D9D9 !important;
+    box-shadow: 0.3rem 0.3rem #222;
+    border: 2px solid #D9D9D9 !important;
+}
+
+.suscribe-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.suscribe-container .row {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+}
+
+.suscribe-container .col {
+    display: flex;
+    align-items: stretch;
+}
+
+/* FLOATING LABELS */
+.suscribe-input-container .form-floating>label {
+    color: #222 !important;
+    background-color: transparent !important;
+    font-family: "Roboto Mono";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-shadow: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.suscribe-input-container .form-floating>.form-control-plaintext~label::after,
+.suscribe-input-container .form-floating>.form-control:focus~label::after,
+.suscribe-input-container .form-floating>.form-control:not(:placeholder-shown)~label::after,
+.suscribe-input-container .form-floating>.form-select~label::after {
+    background-color: transparent !important;
+    border-radius: 0 !important;
+}

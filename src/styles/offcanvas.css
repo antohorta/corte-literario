@@ -1,0 +1,276 @@
+.offcanvas,
+.offcanvas-header,
+.offcanvas-body,
+.dropdown-menu {
+    background-color: #222 !important;
+    border: none !important;
+}
+
+.offcanvas-body {
+    padding: 0.5rem 1.5rem !important;
+}
+
+.dropdown-menu.show {
+    width: 100% !important;
+}
+
+.dropdown-menu.show a {
+    color: #D9D9D9 !important;
+    font-family: "Roboto Mono" !important;
+    font-size: 1rem !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: normal !important;
+    padding-left: 2rem !important;
+}
+
+.offcanvas a,
+.offcanvas-header a,
+.offcanvas-body a {
+    color: #D9D9D9 !important;
+    font-family: "Roboto Mono" !important;
+    font-size: 1.6rem !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: normal !important;
+    padding: 0.5rem !important;
+}
+
+.offcanvas a:hover,
+.offcanvas-header a:hover,
+.offcanvas-body a:hover,
+.offcanvas a:active,
+.offcanvas-header a:active,
+.offcanvas-body a:active,
+.offcanvas a:focus,
+.offcanvas-header a:focus,
+.offcanvas-body a:focus,
+.offcanvas a:focus-visible,
+.offcanvas-header a:focus-visible,
+.offcanvas-body a:focus-visible {
+    color: #D9D9D9 !important;
+    box-shadow: none !important;
+    background-color: #222 !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.offcanvas a:hover,
+.offcanvas-header a:hover,
+.offcanvas-body a:hover,
+.offcanvas a:active,
+.offcanvas-header a:active,
+.offcanvas-body a:active {
+    text-decoration: line-through !important;
+}
+
+
+/* CHECKBOXES */
+.dropdown-menu.show input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #D9D9D9;
+    border-radius: 0px;
+    background-color: #222;
+    cursor: pointer;
+    position: relative;
+    margin-right: 0.4rem;
+}
+
+.dropdown-menu.show input[type="checkbox"]:checked {
+    background-color: #D9D9D9;
+}
+
+.dropdown-menu.show input[type="checkbox"]:checked::before {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    color: #222;
+}
+
+/* BOTONES */
+
+.filters-container {
+    margin-bottom: 10rem;
+}
+
+.filter-buttons-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    padding: 0rem 1rem 1rem 1rem;
+    z-index: 10000;
+}
+
+.btn-close {
+    --bs-btn-close-bg: url('data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23D9D9D9"%3e%3cpath d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/%3e%3c/svg%3e') !important;
+}
+
+#primary-button,
+#primary-button:hover,
+#primary-button:focus,
+#primary-button:focus-visible {
+    width: 100% !important;
+    padding: 0.5rem 1rem 0.5rem 1rem !important;
+    margin: 0.5rem 0rem 0.5rem 0rem !important;
+    border-radius: 0rem !important;
+    background-color: #D9D9D9 !important;
+    border: 2px solid #222 !important;
+    color: #222 !important;
+    font-family: "Roboto Mono" !important;
+    font-size: 0.9rem !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    box-shadow: none !important;
+}
+
+#primary-button:hover {
+    box-shadow: 0.3rem 0.3rem #D9D9D9 !important;
+    border: 2px solid #222 !important;
+}
+
+#primary-button:active {
+    background-color: #222 !important;
+    color: #D9D9D9 !important;
+    box-shadow: 0.3rem 0.3rem #D9D9D9 !important;
+    border: 2px solid #D9D9D9 !important;
+}
+
+#secondary-button,
+#secondary-button:hover,
+#secondary-button:focus,
+#secondary-button:focus-visible {
+    width: 100% !important;
+    padding: 0.5rem 1rem 0.5rem 1rem !important;
+    margin: 0.5rem 0rem 0.5rem 0rem !important;
+    border-radius: 0rem !important;
+    background-color: #222 !important;
+    border: 2px solid #D9D9D9 !important;
+    color: #D9D9D9 !important;
+    font-family: "Roboto Mono" !important;
+    font-size: 0.9rem !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    box-shadow: none !important;
+}
+
+#secondary-button:hover {
+    box-shadow: 0.3rem 0.3rem #D9D9D9 !important;
+}
+
+#secondary-button:active {
+    background-color: #D9D9D9 !important;
+    color: #222 !important;
+    box-shadow: 0.3rem 0.3rem #D9D9D9 !important;
+    border: 2px solid #222 !important;
+}
+
+/* + , - DROPDOWNS */
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Espacio entre el texto y el icono */
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none !important;
+    vertical-align: 0rem !important;
+}
+
+/* CERRADO (+) */
+.dropdown-toggle[aria-expanded="false"]::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M11.25 12.75V21.75H12.75V12.75H21.75V11.25H12.75V2.25L11.25 2.25V11.25H2.25V12.75H11.25Z' fill='%23D9D9D9'/%3E%3C/svg%3E") !important;
+    transform: rotate(0deg);
+}
+
+/* DESPLEGADO (-) */
+.dropdown-toggle[aria-expanded="true"]::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.25 11.25H21.75V12.75H2.25V11.25Z' fill='%23D9D9D9'/%3E%3C/svg%3E") !important;
+    transform: rotate(180deg);
+}
+
+
+/* INPUT DE PRECII MIN Y MAX */
+
+a.min-max-container.dropdown-item {
+    padding: 0rem !important;
+}
+
+a.min-max-container.dropdown-item:hover {
+    text-decoration: none !important;
+}
+
+.min-max-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.min-max-container .form-control,
+.min-max-container .form-control:focus {
+    border-radius: 0rem;
+    background-color: transparent;
+    width: 30%;
+    box-shadow: none;
+    border: 1px solid #D9D9D9;
+}
+
+.min-max-container span {
+    font-size: 1.5rem;
+    margin-right: 0.3rem;
+}
+
+.min-max-container .form-control::placeholder {
+    color: #D9D9D9 !important;
+}
+
+.min-max-container input#minimo.form-control,
+.min-max-container input#maximo.form-control {
+    width: 80%;
+}
+
+/* FLOATING LABELS */
+.min-max-container .form-floating>label {
+    color: #D9D9D9 !important;
+    background-color: transparent !important;
+    font-family: "Roboto Mono";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-shadow: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.min-max-container .form-floating>.form-control {
+    color: #D9D9D9 !important;
+}
+
+.min-max-container .form-floating>.form-control-plaintext~label::after,
+.min-max-container .form-floating>.form-control:focus~label::after,
+.min-max-container .form-floating>.form-control:not(:placeholder-shown)~label::after,
+.min-max-container .form-floating>.form-select~label::after {
+    background-color: transparent !important;
+    border-radius: 0 !important;
+}

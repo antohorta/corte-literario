@@ -1,0 +1,27 @@
+.slide-container {
+    background: #D9D9D9;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+}
+
+.slide-container h2 {
+    color: #222;
+    font-family: "Funnel Display";
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 7rem;
+    text-align: center;
+    padding: 0rem;
+    margin: 0rem 0rem 1rem 0rem;
+}
+
+.slide-cards-container {
+    margin: 2rem;
+}
+
+.slide-cards-container .slick-initialized .slick-slide {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
