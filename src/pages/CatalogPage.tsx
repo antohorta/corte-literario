@@ -16,8 +16,9 @@ import { IEditorial } from '../interfaces/IEditorial';
 import Pagination from 'react-bootstrap/Pagination';
 import { useSelector } from "react-redux";
 import { RootType } from "../states/store";
-import PriceRange from '../components/PriceRange';
 import { IBook } from '../interfaces/IBook';
+import Form from 'react-bootstrap/Form';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
 interface CatalogPageProps {
     title: string;
@@ -29,7 +30,13 @@ const CatalogPage = (props: CatalogPageProps) => {
 
     /* ESTADOS Y HANDLES PARA OFFCANVAS DE FILTROS */
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false);
+        setTempMinPrice(0);
+        setTempMaxPrice(300000);
+        setShow(false);
+    }
+
     const handleShow = () => setShow(true);
 
     /* GÉNERO SELECCIONADO EN NAVBAR */
@@ -46,6 +53,10 @@ const CatalogPage = (props: CatalogPageProps) => {
     const [selectedEditorialsTemp, setSelectedEditorialsTemp] = useState<string[]>([]);
     const [appliedEditorials, setAppliedEditorials] = useState<string[]>([]);
     const [sortOption, setSortOption] = useState<{ sort: string; order: "asc" | "desc" } | null>(null);
+    const [minPrice, setMinPrice] = useState<number>(0);
+    const [maxPrice, setMaxPrice] = useState<number>(300000);
+    const [tempMinPrice, setTempMinPrice] = useState<number>(minPrice);
+    const [tempMaxPrice, setTempMaxPrice] = useState<number>(maxPrice);
 
     // HANDLE FILTRO GÉNEROS
     const handleGenreChange = (genre: string) => {
@@ -65,22 +76,36 @@ const CatalogPage = (props: CatalogPageProps) => {
         );
     };
 
-    // HANDLE FILTROS PRECIO + A, Z
+    // HANDLE FILTROS ORDENAR POR PRECIO Y ALFABETICAMENTE
     const handleSortSelection = (sort: string, order: "asc" | "desc") => {
         setSortOption({ sort, order });
+        setShow(false);
+    };
+
+    // HANDLES FILTRAR POR PRECIOS
+    const handleTempMinPrice = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setTempMinPrice(Number(e.target.value));
+    };
+
+    const handleTempMaxPrice = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setTempMaxPrice(Number(e.target.value));
     };
 
     // APLICAR FILTROS
     const handleApplyFilters = () => {
         setAppliedGenres(selectedGenresTemp);
         setAppliedEditorials(selectedEditorialsTemp)
+        setMinPrice(tempMinPrice);
+        setMaxPrice(tempMaxPrice);
         handleClose();
     };
 
     // BORRAR FILTROS
     const handleDeleteFilters = () => {
         setAppliedGenres([]);
-        setAppliedEditorials([])
+        setAppliedEditorials([]);
+        setMinPrice(0);
+        setMaxPrice(300000);
         handleClose();
     };
 
@@ -91,13 +116,15 @@ const CatalogPage = (props: CatalogPageProps) => {
     const appliedEditorialsParam = appliedEditorials.length ? `editorial=${appliedEditorials.map(encodeURIComponent).join("&editorial=")}` : "";
     const sortParam = sortOption ? `_sort=${sortOption.sort}&_order=${sortOption.order}` : "";
     const paginationParams = `_page=${currentPage}&_limit=${itemsPerPage}`;
+    const priceParam = (minPrice > 0 || maxPrice > 0) ? `precio_gte=${minPrice}&precio_lte=${maxPrice}` : '';
 
     const url = [
         genreParam,
         appliedGenresParam,
         appliedEditorialsParam,
         paginationParams,
-        sortParam
+        sortParam,
+        priceParam
     ].filter(param => param).join("&");
 
     const finalURL = `${baseURL}${url}`;
@@ -293,11 +320,28 @@ const CatalogPage = (props: CatalogPageProps) => {
                                 ))}
                             </NavDropdown>
 
+                            {/* PRECIO MIN Y MAX */}
                             <NavDropdown
                                 title="PRECIO">
-                                <NavDropdown.Item onClick={handleNoPropagation}>
-                                    <p>Rango de precios:</p>
-                                    <PriceRange></PriceRange>
+                                <NavDropdown.Item onClick={handleNoPropagation} className='min-max-container'>
+                                    <span>$</span>
+                                    <FloatingLabel className="min-max-input-container" controlId="minimo" label='Mínimo'>
+                                        <Form.Control
+                                            type="number"
+                                            placeholder="Mínimo"
+                                            min="0"
+                                            value={tempMinPrice}
+                                            onChange={handleTempMinPrice} />
+                                    </FloatingLabel>
+                                    <span>$</span>
+                                    <FloatingLabel className="min-max-input-container" controlId="maximo" label='Máximo'>
+                                        <Form.Control
+                                            type="number"
+                                            placeholder="Máximo"
+                                            min="0"
+                                            value={tempMaxPrice}
+                                            onChange={handleTempMaxPrice} />
+                                    </FloatingLabel>
                                 </NavDropdown.Item>
                             </NavDropdown>
                         </div>

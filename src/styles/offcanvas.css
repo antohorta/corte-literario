@@ -180,7 +180,8 @@
 .dropdown-toggle {
     display: flex;
     align-items: center;
-    gap: 8px; /* Espacio entre el texto y el icono */
+    gap: 8px;
+    /* Espacio entre el texto y el icono */
 }
 
 .dropdown-toggle::after {
@@ -207,3 +208,69 @@
     transform: rotate(180deg);
 }
 
+
+/* INPUT DE PRECII MIN Y MAX */
+
+a.min-max-container.dropdown-item {
+    padding: 0rem !important;
+}
+
+a.min-max-container.dropdown-item:hover {
+    text-decoration: none !important;
+}
+
+.min-max-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.min-max-container .form-control,
+.min-max-container .form-control:focus {
+    border-radius: 0rem;
+    background-color: transparent;
+    width: 30%;
+    box-shadow: none;
+    border: 1px solid #D9D9D9;
+}
+
+.min-max-container span {
+    font-size: 1.5rem;
+    margin-right: 0.3rem;
+}
+
+.min-max-container .form-control::placeholder {
+    color: #D9D9D9 !important;
+}
+
+.min-max-container input#minimo.form-control,
+.min-max-container input#maximo.form-control {
+    width: 80%;
+}
+
+/* FLOATING LABELS */
+.min-max-container .form-floating>label {
+    color: #D9D9D9 !important;
+    background-color: transparent !important;
+    font-family: "Roboto Mono";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-shadow: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.min-max-container .form-floating>.form-control {
+    color: #D9D9D9 !important;
+}
+
+.min-max-container .form-floating>.form-control-plaintext~label::after,
+.min-max-container .form-floating>.form-control:focus~label::after,
+.min-max-container .form-floating>.form-control:not(:placeholder-shown)~label::after,
+.min-max-container .form-floating>.form-select~label::after {
+    background-color: transparent !important;
+    border-radius: 0 !important;
+}
