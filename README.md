@@ -1,4 +1,4 @@
-[Español](#Corte-Literario-(Español))   | [English](#Corte-Literario-(English))
+[Español](#corte-literario-español)   | [English](#corte-literario-english)
 
 # Corte Literario (Español)
 
